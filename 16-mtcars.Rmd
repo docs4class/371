@@ -1,0 +1,86 @@
+# Preloaded data and `mtcars`
+
+R comes with several built-in data sets, **which are generally used as demo data for playing with R functions.**
+
+To see the datasets type:
+
+`mtcars`
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Practicing with `mtcars` data set
+
+This demonstration is based on the datasset `mtcars`.
+
+1. Read in `mtcars`
+```{r}
+data(mtcars)
+```
+
+
+2. View first few rows and last few rows of mtcars dataframe using functions `head()` and `tail()`
+```{r}
+head(mtcars)
+tail(mtcars)
+```
+
+
+
+3. Some info about mtcars dataframe using function `colnames()`, `rownames()`, `summary()`and `dim()`
+```{r}
+colnames(mtcars)
+rownames(mtcars)
+summary(mtcars)
+dim(mtcars)
+```
+
+
+4. To calculate the variance of weight:
+
+```{r}
+var(mtcars$wt)
+```
+
+5. To get the histogram of hp, the code below will produce a histogram:
+
+```{r}
+hist(mtcars$hp)
+```
+
+6. To calculate the quantiles by percent:
+
+```{r}
+quantile(mtcars$wt, c(.2, .4, .8))
+
+```
+
+
+
+
+
+## Excerises for you:
+
+1. Find the minimum and maximum value of `mpg` 
+2. Find the mean and standard deviation of data variable `mpg` 
+3. What variable has a 3rd quartile value of 180.0? 
+
+4. Create and explain what this means
+
+```{r, echo=FALSE}
+plot(mtcars)
+```
+
+5. Create and explain what this means
+
+```{r, echo=FALSE, fig.dim = c(3, 2)}
+cor(mtcars)
+```
+
+6. Create a variable called `efficiency` which is mpg divided by weight.  Which car has the max `efficiency` and what is this value?
+7. Which variable in this dataset has the greatest standard deviation?
+8. How many cars have 3 gears?
+9. How many cars get more than 17 mpg?

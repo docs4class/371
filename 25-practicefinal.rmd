@@ -1,0 +1,100 @@
+# Practice Final Exam
+
+## 100-Meter Freestyle Olympic Winning Time (seconds)
+
+
+1.	Create a table in R that looks like the data above.  Call this table: swim
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width = "50%"}
+
+year <- c(1912,1920,1924,1928,1932,1936,1948,1952,1956,1960,1964,1968,1972,1976,1980,1984,1988)
+mens <- c(63.2,61.4,59,58.6,58.2,57.6,57.3,57.4,55.4,55.2,53.4,52.2,51.22,49.99,50.4,49.8,48.63)
+womens <- c(72.2,73.6,72.4,71,66.8,65.9,66.3,66.8,62,61.2,59.4,60,58.59,55.65,54.79,55.92,54.93)
+swim1 <- data.frame(year,mens,womens)
+swim1
+```
+
+2.	On 1 page, plot two graphs: a) year (x axis) vs Menâs time (y axis) and b) year (x axis) vs Womenâs time (y axis). Add a best fit line for menâs and womenâs winning times. 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width = "50%"}
+par(mfrow=c(1,2))
+plot(year,mens)
+m1 <- lm(mens~year, data = swim1)
+abline(m1)
+plot(year,womens)
+m2 <- lm(womens~year, data = swim1)
+abline(m2)
+# summary(m2)
+
+```
+
+3.	Determine the womenâs time in 2016 according to the line of best fit based solely on the information provided by this best fit line (i.e, do NOT use a prediction function) and use R as a calculator obtain an estimate for the 2016 winning time.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width = "50%"}
+(2016*-0.26359)+ 578.15328 
+```
+
+4.	Create a table based on swim that is comprised only of womenâs times for the years 1932 through 1972.  Call this table swim2.  Based on swim2, predict the winning womenâs times for 1976, 1980, 1984, and 1988. Feel free to use a `predict` function.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width = "50%"}
+swim2 <- data.frame(year[5:13],womens[5:13])
+m3 <- lm(womens~year, data = swim2)
+winningtimes <- data.frame(year=c(1976,1980,1984,1988))
+predict(m3, winningtimes, interval = "confidence")
+#predict(m3, winningtimes, interval = "prediction")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width = "50%"}
+library(dplyr)
+options(max.print = 7)
+```
+
+## Starwars fun
+
+Use the starwars data in the dplyr package to answer the following questions:
+
+5. Body Mass Index (BMI) is defined as the body mass divided by the square of the body height.  Use pounds and inches (convert given data as needed) and use this formula to cacluate BMI:
+
+> Weight (lb) / [height (in)]^2^ x 703
+
+ 
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width = "50%"}
+q5 <- starwars %>%
+  select(species, mass, height) %>% 
+  mutate(height.in = height*.39370079) %>%
+  mutate(height.in.squared = height.in^2) %>%
+  mutate(mass.lbs = mass*2.20462262) %>% 
+  mutate(bmi = ((mass.lbs/height.in.squared)*703)) %>% 
+  arrange(desc(bmi))
+head(q5)
+```
+
+
+6. How many of each species are on each homeworld? 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width = "50%"}
+species <-  starwars %>%
+ count(species, homeworld, sort = TRUE)
+species
+```
+
+
+7. What homeworlds have the greatest % humans?
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.width = "50%"}
+
+# What homeworld has the greatest % humans?
+q1 <- starwars %>%
+group_by(homeworld) %>%
+add_tally(name = "total.individuals") %>%
+arrange(desc(total.individuals)) %>%
+filter(species == "Human") %>%
+group_by(homeworld) %>%
+add_tally(name = "humans") %>%
+mutate(pct.human = humans/total.individuals) %>%
+arrange(desc(pct.human)) %>%
+select(homeworld, humans, total.individuals, pct.human) %>%
+distinct(homeworld, .keep_all = T)
+
+q1
+```
