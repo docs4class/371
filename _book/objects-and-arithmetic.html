@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Objects and Arithmetic | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 9 Objects and Arithmetic | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="10.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
+<meta name="description" content="9.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Objects and Arithmetic | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 9 Objects and Arithmetic | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="10.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
+<meta property="og:description" content="9.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Objects and Arithmetic | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="10.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
+<meta name="twitter:title" content="Chapter 9 Objects and Arithmetic | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="9.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -40,27 +40,26 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="hello-bookdown.html"><span class="header-section-number">2</span> Hello bookdown</a></li>
-<li><a class="" href="syllabus.html"><span class="header-section-number">3</span> Syllabus</a></li>
-<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">4</span> Our Class Rhythm</a></li>
-<li><a class="" href="end-in-mind.html"><span class="header-section-number">5</span> End in Mind</a></li>
-<li><a class="" href="schedule.html"><span class="header-section-number">6</span> Schedule</a></li>
-<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">7</span> Elephant in the room: R</a></li>
-<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">8</span> R vs. Excel</a></li>
-<li><a class="" href="r-basics.html"><span class="header-section-number">9</span> R basics and workflows</a></li>
-<li><a class="active" href="objects-and-arithmetic.html"><span class="header-section-number">10</span> Objects and Arithmetic</a></li>
-<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">11</span> Summaries and Subscripting</a></li>
-<li><a class="" href="matrices.html"><span class="header-section-number">12</span> Matrices</a></li>
-<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">13</span> Preloaded data and mtcars</a></li>
-<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
-<li><a class="" href="more-dplyr.html"><span class="header-section-number">15</span> More DPLYR</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">16</span> DPLYR</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">17</span> Linear Regression</a></li>
-<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic Regression</a></li>
-<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">20</span> Dealing with Errors</a></li>
-<li><a class="" href="practice-final-exam.html"><span class="header-section-number">21</span> Practice Final Exam</a></li>
-<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">22</span> Data Analytics I Quizzes</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="active" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">13</span> GDH Ice Cream</a></li>
+<li><a class="" href="more-dplyr.html"><span class="header-section-number">14</span> More DPLYR</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">15</span> DPLYR</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">17</span> Linear Regression Practice</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">18</span> Logistic Regression</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></li>
+<li><a class="" href="practice-final-exam.html"><span class="header-section-number">20</span> Practice Final Exam</a></li>
+<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -68,13 +67,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="objects-and-arithmetic" class="section level1" number="10">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="objects-and-arithmetic" class="section level1" number="9">
 <h1>
-<span class="header-section-number">10</span> Objects and Arithmetic<a class="anchor" aria-label="anchor" href="#objects-and-arithmetic"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> Objects and Arithmetic<a class="anchor" aria-label="anchor" href="#objects-and-arithmetic"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-1" class="section level2" number="10.1">
+<div id="introduction-1" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">10.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>R stores information and operates on objects. The simplest objects are scalars, vectors and matrices.
 But there are many others: lists and dataframes for example. In advanced use of R it can also be
@@ -99,9 +98,9 @@ the contents of the object by simply typing its name:</p>
 <span class="co">#&gt; [1] 10</span></code></pre></div>
 <p>Storing things such as calculations as objects is extremely useful, especially in longer scripts. Mainly because you will likely call the same equation multiple times and if you need to revise it in any way you only need to change the initial assignment rather than every line.</p>
 </div>
-<div id="basic-functions" class="section level2" number="10.2">
+<div id="basic-functions" class="section level2" number="9.2">
 <h2>
-<span class="header-section-number">10.2</span> Basic Functions<a class="anchor" aria-label="anchor" href="#basic-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2</span> Basic Functions<a class="anchor" aria-label="anchor" href="#basic-functions"><i class="fas fa-link"></i></a>
 </h2>
 <p>At any time we can list the objects which we have created:</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
@@ -185,14 +184,14 @@ are mixed. For example:</p>
 <p>though care should be taken to make sure that R is doing what you would like it to in these circumstances.</p>
 <p>Two particularly useful functions worth remembering are length which returns the length of a vector (i.e. the number of elements it contains) and sum which calculates the sum of the elements of a vector.</p>
 </div>
-<div id="statistics-and-summaries" class="section level2" number="10.3">
+<div id="statistics-and-summaries" class="section level2" number="9.3">
 <h2>
-<span class="header-section-number">10.3</span> Statistics and Summaries<a class="anchor" aria-label="anchor" href="#statistics-and-summaries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3</span> Statistics and Summaries<a class="anchor" aria-label="anchor" href="#statistics-and-summaries"><i class="fas fa-link"></i></a>
 </h2>
 <p>One of the most useful functions of R is its ability to perform statistical analysis on large pieces of data. Later in this book we will cover how this analysis can be used to build complex models and test their accuracy. For now, the focus will be on how to perform basic statistical analysis and the definitions of the more basic terms.</p>
-<div id="statistical-analysis" class="section level3" number="10.3.1">
+<div id="statistical-analysis" class="section level3" number="9.3.1">
 <h3>
-<span class="header-section-number">10.3.1</span> Statistical Analysis<a class="anchor" aria-label="anchor" href="#statistical-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.1</span> Statistical Analysis<a class="anchor" aria-label="anchor" href="#statistical-analysis"><i class="fas fa-link"></i></a>
 </h3>
 <p>You’ve undoubtedly have heard the terms mean, median, standard deviation and variance. However, if asked to define these terms and provide examples of their usefulness, what would you say? This section is going to answer the first part of that question.</p>
 <p>Mean is a pretty straight forward concept for most. Commonly referred to as the “average,” you find this number by adding all the numbers in your data set together and then divide by the total number of points you used. This is easily done on a calculator if you are working with less then 20 digits, however this is almost never the case in data science. Often, especially with R, you will be dealing with data sets with hundreds, thousands, or maybe even hundreds of thousands of data points. Fortunately, R takes the pain away from this process and offers a very simple function that will do this for you. Start by creating an object that contains a list of numbers, and then simply use the mean function to calculate the average of your variable.</p>
@@ -215,9 +214,9 @@ are mixed. For example:</p>
 <span class="co">#&gt; [1] 4.821066</span></code></pre></div>
 <p>Finally, we can cover variance. Variance is the measure of distance between two numbers. This statistic is often used to measure how spread out your data is and can be used to determine your model’s accuracy. Typically, a higher variance means your model is inaccurate. So, when building models and reviewing your summary statistics, you want your variance to be as low as possible. There is a var() function that will find the variance of a variable for you, however typically you will create a confusion matrix (discussed in a later section) that will help you determine the variance, and thus accuracy of your model.</p>
 </div>
-<div id="anscombes-quartet" class="section level3" number="10.3.2">
+<div id="anscombes-quartet" class="section level3" number="9.3.2">
 <h3>
-<span class="header-section-number">10.3.2</span> Anscombe’s Quartet<a class="anchor" aria-label="anchor" href="#anscombes-quartet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.2</span> Anscombe’s Quartet<a class="anchor" aria-label="anchor" href="#anscombes-quartet"><i class="fas fa-link"></i></a>
 </h3>
 <p>You may be asking now, why bother visualizing data if I have all these numbers that will tell me what I need to know about my data? You are correct in saying that statistical data is very useful, and in many cases essential, however visualization is equally as important. Anscombe’s Quartet is a statistical phenomenon where four sets of data have very similar statistical properties, but very are completely different when graphed. Let’s take a look at the data:</p>
 <pre><code>#&gt;    x1 x2 x3 x4    y1   y2    y3    y4
@@ -271,9 +270,9 @@ are mixed. For example:</p>
 <p>Pretty rad right? So yes, statistical data is vital, however it should not be the only thing you look at, sometimes a visualization can help you understand the data more! Later in this book, and in the upper level data analytics courses, we will cover visualizations more and how they can be useful.</p>
 </div>
 </div>
-<div id="exercises-1" class="section level2" number="10.4">
+<div id="exercises-1" class="section level2" number="9.4">
 <h2>
-<span class="header-section-number">10.4</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li>Define</li>
@@ -323,21 +322,21 @@ are mixed. For example:</p>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="r-basics.html"><span class="header-section-number">9</span> R basics and workflows</a></div>
-<div class="next"><a href="summaries-and-subscripting.html"><span class="header-section-number">11</span> Summaries and Subscripting</a></div>
+<div class="prev"><a href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></div>
+<div class="next"><a href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#objects-and-arithmetic"><span class="header-section-number">10</span> Objects and Arithmetic</a></li>
-<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">10.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#basic-functions"><span class="header-section-number">10.2</span> Basic Functions</a></li>
+<li><a class="nav-link" href="#objects-and-arithmetic"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">9.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#basic-functions"><span class="header-section-number">9.2</span> Basic Functions</a></li>
 <li>
-<a class="nav-link" href="#statistics-and-summaries"><span class="header-section-number">10.3</span> Statistics and Summaries</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#statistical-analysis"><span class="header-section-number">10.3.1</span> Statistical Analysis</a></li>
-<li><a class="nav-link" href="#anscombes-quartet"><span class="header-section-number">10.3.2</span> Anscombe’s Quartet</a></li>
+<a class="nav-link" href="#statistics-and-summaries"><span class="header-section-number">9.3</span> Statistics and Summaries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#statistical-analysis"><span class="header-section-number">9.3.1</span> Statistical Analysis</a></li>
+<li><a class="nav-link" href="#anscombes-quartet"><span class="header-section-number">9.3.2</span> Anscombe’s Quartet</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#exercises-1"><span class="header-section-number">10.4</span> Exercises</a></li>
+<li><a class="nav-link" href="#exercises-1"><span class="header-section-number">9.4</span> Exercises</a></li>
 </ul>
 
       <div class="book-extra">
@@ -355,7 +354,7 @@ are mixed. For example:</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-25.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 16 DPLYR | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 15 DPLYR | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="16.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. Your life is about to change. For the better, even.   16.2 Single...">
+<meta name="description" content="15.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. Your life is about to change. For the better, even.   15.2 Single...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 16 DPLYR | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 15 DPLYR | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="16.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. Your life is about to change. For the better, even.   16.2 Single...">
+<meta property="og:description" content="15.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. Your life is about to change. For the better, even.   15.2 Single...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 16 DPLYR | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="16.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. Your life is about to change. For the better, even.   16.2 Single...">
+<meta name="twitter:title" content="Chapter 15 DPLYR | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="15.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. Your life is about to change. For the better, even.   15.2 Single...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -40,27 +40,26 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="hello-bookdown.html"><span class="header-section-number">2</span> Hello bookdown</a></li>
-<li><a class="" href="syllabus.html"><span class="header-section-number">3</span> Syllabus</a></li>
-<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">4</span> Our Class Rhythm</a></li>
-<li><a class="" href="end-in-mind.html"><span class="header-section-number">5</span> End in Mind</a></li>
-<li><a class="" href="schedule.html"><span class="header-section-number">6</span> Schedule</a></li>
-<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">7</span> Elephant in the room: R</a></li>
-<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">8</span> R vs. Excel</a></li>
-<li><a class="" href="r-basics.html"><span class="header-section-number">9</span> R basics and workflows</a></li>
-<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">10</span> Objects and Arithmetic</a></li>
-<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">11</span> Summaries and Subscripting</a></li>
-<li><a class="" href="matrices.html"><span class="header-section-number">12</span> Matrices</a></li>
-<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">13</span> Preloaded data and mtcars</a></li>
-<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
-<li><a class="" href="more-dplyr.html"><span class="header-section-number">15</span> More DPLYR</a></li>
-<li><a class="active" href="dplyr.html"><span class="header-section-number">16</span> DPLYR</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">17</span> Linear Regression</a></li>
-<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic Regression</a></li>
-<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">20</span> Dealing with Errors</a></li>
-<li><a class="" href="practice-final-exam.html"><span class="header-section-number">21</span> Practice Final Exam</a></li>
-<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">22</span> Data Analytics I Quizzes</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">13</span> GDH Ice Cream</a></li>
+<li><a class="" href="more-dplyr.html"><span class="header-section-number">14</span> More DPLYR</a></li>
+<li><a class="active" href="dplyr.html"><span class="header-section-number">15</span> DPLYR</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">17</span> Linear Regression Practice</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">18</span> Logistic Regression</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></li>
+<li><a class="" href="practice-final-exam.html"><span class="header-section-number">20</span> Practice Final Exam</a></li>
+<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -68,22 +67,22 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr" class="section level1" number="16">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr" class="section level1" number="15">
 <h1>
-<span class="header-section-number">16</span> DPLYR<a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15</span> DPLYR<a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-4" class="section level2" number="16.1">
+<div id="introduction-4" class="section level2" number="15.1">
 <h2>
-<span class="header-section-number">16.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
 </h2>
 <p>For more help <strong>PLEASE</strong> check out <a href="https://dplyr.tidyverse.org/articles/dplyr.html">Introduction to dplyr</a> introducing the key functionality of the dplyr package.</p>
 <blockquote>
 <p>Your life is about to change. For the better, even.</p>
 </blockquote>
 </div>
-<div id="single-table-verbs-1" class="section level2" number="16.2">
+<div id="single-table-verbs-1" class="section level2" number="15.2">
 <h2>
-<span class="header-section-number">16.2</span> Single table verbs<a class="anchor" aria-label="anchor" href="#single-table-verbs-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.2</span> Single table verbs<a class="anchor" aria-label="anchor" href="#single-table-verbs-1"><i class="fas fa-link"></i></a>
 </h2>
 <p><code>dplyr</code> aims to provide a function for each basic verb of data manipulation. These verbs can be organised into three categories based on the component of the dataset that they work with:</p>
 <p>Rows:</p>
@@ -109,15 +108,15 @@ Groups of rows:</li>
 <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> collapses a group into a single row. It’s not that useful until we learn the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> verb below.</li>
 </ul>
 </div>
-<div id="the-pipe" class="section level2" number="16.3">
+<div id="the-pipe" class="section level2" number="15.3">
 <h2>
-<span class="header-section-number">16.3</span> The pipe<a class="anchor" aria-label="anchor" href="#the-pipe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3</span> The pipe<a class="anchor" aria-label="anchor" href="#the-pipe"><i class="fas fa-link"></i></a>
 </h2>
 <p>All of the <code>dplyr</code> functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the <code>%&gt;%</code> operator from magrittr. x %&gt;% f(y) turns into f(x, y) so the result from one step is then “piped” into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).</p>
 </div>
-<div id="loading-dplyr-and-the-nycflights13-dataset" class="section level2" number="16.4">
+<div id="loading-dplyr-and-the-nycflights13-dataset" class="section level2" number="15.4">
 <h2>
-<span class="header-section-number">16.4</span> Loading dplyr and the nycflights13 dataset<a class="anchor" aria-label="anchor" href="#loading-dplyr-and-the-nycflights13-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4</span> Loading dplyr and the nycflights13 dataset<a class="anchor" aria-label="anchor" href="#loading-dplyr-and-the-nycflights13-dataset"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load packages</span>
@@ -141,9 +140,9 @@ Groups of rows:</li>
 <span class="co">#&gt; #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</span></code></pre></div>
 </div>
-<div id="choosing-columns-select-rename" class="section level2" number="16.5">
+<div id="choosing-columns-select-rename" class="section level2" number="15.5">
 <h2>
-<span class="header-section-number">16.5</span> Choosing columns: select, rename<a class="anchor" aria-label="anchor" href="#choosing-columns-select-rename"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.5</span> Choosing columns: select, rename<a class="anchor" aria-label="anchor" href="#choosing-columns-select-rename"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># besides just using select() to pick columns...</span>
@@ -246,9 +245,9 @@ Groups of rows:</li>
 <span class="co">#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</span></code></pre></div>
 </div>
-<div id="choosing-rows-filter-between-slice-sample_n-top_n-distinct" class="section level2" number="16.6">
+<div id="choosing-rows-filter-between-slice-sample_n-top_n-distinct" class="section level2" number="15.6">
 <h2>
-<span class="header-section-number">16.6</span> Choosing rows: filter, between, slice, sample_n, top_n, distinct<a class="anchor" aria-label="anchor" href="#choosing-rows-filter-between-slice-sample_n-top_n-distinct"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.6</span> Choosing rows: filter, between, slice, sample_n, top_n, distinct<a class="anchor" aria-label="anchor" href="#choosing-rows-filter-between-slice-sample_n-top_n-distinct"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># filter() supports the use of multiple conditions</span>
@@ -325,16 +324,16 @@ Groups of rows:</li>
 <span class="co">#&gt; # Groups:   month, day [365]</span>
 <span class="co">#&gt;     year month   day dep_time sched_dep_time dep_delay</span>
 <span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1  2013     1     1     1758           1749         9</span>
-<span class="co">#&gt;  2  2013     1     1     2055           2100        -5</span>
-<span class="co">#&gt;  3  2013     1     1     1433           1435        -2</span>
-<span class="co">#&gt;  4  2013     1     2      755            800        -5</span>
-<span class="co">#&gt;  5  2013     1     2     1703           1650        13</span>
-<span class="co">#&gt;  6  2013     1     2      828            835        -7</span>
-<span class="co">#&gt;  7  2013     1     3     2104           2025        39</span>
-<span class="co">#&gt;  8  2013     1     3     1100           1100         0</span>
-<span class="co">#&gt;  9  2013     1     3     1843           1845        -2</span>
-<span class="co">#&gt; 10  2013     1     4      629            630        -1</span>
+<span class="co">#&gt;  1  2013     1     1     1531           1453        38</span>
+<span class="co">#&gt;  2  2013     1     1     2116           2110         6</span>
+<span class="co">#&gt;  3  2013     1     1      851            851         0</span>
+<span class="co">#&gt;  4  2013     1     2      752            800        -8</span>
+<span class="co">#&gt;  5  2013     1     2     1031           1015        16</span>
+<span class="co">#&gt;  6  2013     1     2     1723           1729        -6</span>
+<span class="co">#&gt;  7  2013     1     3     1758           1722        36</span>
+<span class="co">#&gt;  8  2013     1     3      909            908         1</span>
+<span class="co">#&gt;  9  2013     1     3     1752           1745         7</span>
+<span class="co">#&gt; 10  2013     1     4      801            720        41</span>
 <span class="co">#&gt; # ... with 1,085 more rows, and 13 more variables:</span>
 <span class="co">#&gt; #   arr_time &lt;int&gt;, sched_arr_time &lt;int&gt;, arr_delay &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,</span>
@@ -411,9 +410,9 @@ Groups of rows:</li>
 <span class="co"># side note: when chaining, you don't have to include the parentheses if there are no arguments</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">origin</span>, <span class="va">dest</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="va">distinct</span></code></pre></div>
 </div>
-<div id="adding-new-variables-mutate-transmute-add_rownames" class="section level2" number="16.7">
+<div id="adding-new-variables-mutate-transmute-add_rownames" class="section level2" number="15.7">
 <h2>
-<span class="header-section-number">16.7</span> Adding new variables: mutate, transmute, add_rownames<a class="anchor" aria-label="anchor" href="#adding-new-variables-mutate-transmute-add_rownames"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.7</span> Adding new variables: mutate, transmute, add_rownames<a class="anchor" aria-label="anchor" href="#adding-new-variables-mutate-transmute-add_rownames"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># mutate() creates a new variable (and keeps all existing variables)</span>
@@ -512,9 +511,9 @@ Groups of rows:</li>
 <span class="co">#&gt; # ... with 22 more rows, and 2 more variables: gear &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   carb &lt;dbl&gt;</span></code></pre></div>
 </div>
-<div id="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup" class="section level2" number="16.8">
+<div id="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup" class="section level2" number="15.8">
 <h2>
-<span class="header-section-number">16.8</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup<a class="anchor" aria-label="anchor" href="#grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.8</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup<a class="anchor" aria-label="anchor" href="#grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># summarise() can be used to count the number of rows in each group</span>
@@ -659,9 +658,9 @@ Groups of rows:</li>
 <span class="co">#&gt; 10     7    17  1001</span>
 <span class="co">#&gt; # ... with 355 more rows</span></code></pre></div>
 </div>
-<div id="creating-data-frames-data_frame" class="section level2" number="16.9">
+<div id="creating-data-frames-data_frame" class="section level2" number="15.9">
 <h2>
-<span class="header-section-number">16.9</span> Creating data frames: data_frame<a class="anchor" aria-label="anchor" href="#creating-data-frames-data_frame"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.9</span> Creating data frames: data_frame<a class="anchor" aria-label="anchor" href="#creating-data-frames-data_frame"><i class="fas fa-link"></i></a>
 </h2>
 <p><code><a href="https://tibble.tidyverse.org/reference/deprecated.html">data_frame()</a></code> is a better way than <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> for creating data frames. Benefits of <code><a href="https://tibble.tidyverse.org/reference/deprecated.html">data_frame()</a></code>:</p>
 <ul>
@@ -694,9 +693,9 @@ Groups of rows:</li>
 <span class="co">#&gt; $ c   &lt;chr&gt; "string", "string", "string", "string", "strin~</span>
 <span class="co">#&gt; $ d.e &lt;dbl&gt; 1, 1, 1, 1, 1, 1</span></code></pre></div>
 </div>
-<div id="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join" class="section level2" number="16.10">
+<div id="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join" class="section level2" number="15.10">
 <h2>
-<span class="header-section-number">16.10</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join<a class="anchor" aria-label="anchor" href="#joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.10</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join<a class="anchor" aria-label="anchor" href="#joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># create two simple data frames</span>
@@ -793,9 +792,9 @@ Groups of rows:</li>
 <span class="co">#&gt; 1 green      1 S    </span>
 <span class="co">#&gt; 2 yellow     2 M</span></code></pre></div>
 </div>
-<div id="viewing-more-output-print-view" class="section level2" number="16.11">
+<div id="viewing-more-output-print-view" class="section level2" number="15.11">
 <h2>
-<span class="header-section-number">16.11</span> Viewing more output: print, View<a class="anchor" aria-label="anchor" href="#viewing-more-output-print-view"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.11</span> Viewing more output: print, View<a class="anchor" aria-label="anchor" href="#viewing-more-output-print-view"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># specify that you want to see more rows</span>
@@ -890,9 +889,9 @@ Groups of rows:</li>
 <span class="co"># reset options (or just close R)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>dplyr.width <span class="op">=</span> <span class="cn">NULL</span>, dplyr.print_min <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="excercies" class="section level2" number="16.12">
+<div id="excercies" class="section level2" number="15.12">
 <h2>
-<span class="header-section-number">16.12</span> Excercies<a class="anchor" aria-label="anchor" href="#excercies"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.12</span> Excercies<a class="anchor" aria-label="anchor" href="#excercies"><i class="fas fa-link"></i></a>
 </h2>
 <p>Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers.</p>
 <ol style="list-style-type: decimal">
@@ -908,9 +907,9 @@ Groups of rows:</li>
 <li>Which carrier with more than 10 flights in September had greatest % late departing flights?</li>
 </ol>
 </div>
-<div id="a-neat-resource" class="section level2" number="16.13">
+<div id="a-neat-resource" class="section level2" number="15.13">
 <h2>
-<span class="header-section-number">16.13</span> A Neat Resource<a class="anchor" aria-label="anchor" href="#a-neat-resource"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.13</span> A Neat Resource<a class="anchor" aria-label="anchor" href="#a-neat-resource"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -919,25 +918,25 @@ Groups of rows:</li>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="more-dplyr.html"><span class="header-section-number">15</span> More DPLYR</a></div>
-<div class="next"><a href="linear-regression.html"><span class="header-section-number">17</span> Linear Regression</a></div>
+<div class="prev"><a href="more-dplyr.html"><span class="header-section-number">14</span> More DPLYR</a></div>
+<div class="next"><a href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#dplyr"><span class="header-section-number">16</span> DPLYR</a></li>
-<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">16.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#single-table-verbs-1"><span class="header-section-number">16.2</span> Single table verbs</a></li>
-<li><a class="nav-link" href="#the-pipe"><span class="header-section-number">16.3</span> The pipe</a></li>
-<li><a class="nav-link" href="#loading-dplyr-and-the-nycflights13-dataset"><span class="header-section-number">16.4</span> Loading dplyr and the nycflights13 dataset</a></li>
-<li><a class="nav-link" href="#choosing-columns-select-rename"><span class="header-section-number">16.5</span> Choosing columns: select, rename</a></li>
-<li><a class="nav-link" href="#choosing-rows-filter-between-slice-sample_n-top_n-distinct"><span class="header-section-number">16.6</span> Choosing rows: filter, between, slice, sample_n, top_n, distinct</a></li>
-<li><a class="nav-link" href="#adding-new-variables-mutate-transmute-add_rownames"><span class="header-section-number">16.7</span> Adding new variables: mutate, transmute, add_rownames</a></li>
-<li><a class="nav-link" href="#grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup"><span class="header-section-number">16.8</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
-<li><a class="nav-link" href="#creating-data-frames-data_frame"><span class="header-section-number">16.9</span> Creating data frames: data_frame</a></li>
-<li><a class="nav-link" href="#joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join"><span class="header-section-number">16.10</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
-<li><a class="nav-link" href="#viewing-more-output-print-view"><span class="header-section-number">16.11</span> Viewing more output: print, View</a></li>
-<li><a class="nav-link" href="#excercies"><span class="header-section-number">16.12</span> Excercies</a></li>
-<li><a class="nav-link" href="#a-neat-resource"><span class="header-section-number">16.13</span> A Neat Resource</a></li>
+<li><a class="nav-link" href="#dplyr"><span class="header-section-number">15</span> DPLYR</a></li>
+<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">15.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#single-table-verbs-1"><span class="header-section-number">15.2</span> Single table verbs</a></li>
+<li><a class="nav-link" href="#the-pipe"><span class="header-section-number">15.3</span> The pipe</a></li>
+<li><a class="nav-link" href="#loading-dplyr-and-the-nycflights13-dataset"><span class="header-section-number">15.4</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="nav-link" href="#choosing-columns-select-rename"><span class="header-section-number">15.5</span> Choosing columns: select, rename</a></li>
+<li><a class="nav-link" href="#choosing-rows-filter-between-slice-sample_n-top_n-distinct"><span class="header-section-number">15.6</span> Choosing rows: filter, between, slice, sample_n, top_n, distinct</a></li>
+<li><a class="nav-link" href="#adding-new-variables-mutate-transmute-add_rownames"><span class="header-section-number">15.7</span> Adding new variables: mutate, transmute, add_rownames</a></li>
+<li><a class="nav-link" href="#grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup"><span class="header-section-number">15.8</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="nav-link" href="#creating-data-frames-data_frame"><span class="header-section-number">15.9</span> Creating data frames: data_frame</a></li>
+<li><a class="nav-link" href="#joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join"><span class="header-section-number">15.10</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="nav-link" href="#viewing-more-output-print-view"><span class="header-section-number">15.11</span> Viewing more output: print, View</a></li>
+<li><a class="nav-link" href="#excercies"><span class="header-section-number">15.12</span> Excercies</a></li>
+<li><a class="nav-link" href="#a-neat-resource"><span class="header-section-number">15.13</span> A Neat Resource</a></li>
 </ul>
 
       <div class="book-extra">
@@ -955,7 +954,7 @@ Groups of rows:</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-25.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

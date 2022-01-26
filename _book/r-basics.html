@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 9 R basics and workflows | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 8 R basics and workflows | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="9.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
+<meta name="description" content="8.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 9 R basics and workflows | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 8 R basics and workflows | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="9.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
+<meta property="og:description" content="8.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 9 R basics and workflows | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="9.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
+<meta name="twitter:title" content="Chapter 8 R basics and workflows | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="8.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -40,27 +40,26 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="hello-bookdown.html"><span class="header-section-number">2</span> Hello bookdown</a></li>
-<li><a class="" href="syllabus.html"><span class="header-section-number">3</span> Syllabus</a></li>
-<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">4</span> Our Class Rhythm</a></li>
-<li><a class="" href="end-in-mind.html"><span class="header-section-number">5</span> End in Mind</a></li>
-<li><a class="" href="schedule.html"><span class="header-section-number">6</span> Schedule</a></li>
-<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">7</span> Elephant in the room: R</a></li>
-<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">8</span> R vs. Excel</a></li>
-<li><a class="active" href="r-basics.html"><span class="header-section-number">9</span> R basics and workflows</a></li>
-<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">10</span> Objects and Arithmetic</a></li>
-<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">11</span> Summaries and Subscripting</a></li>
-<li><a class="" href="matrices.html"><span class="header-section-number">12</span> Matrices</a></li>
-<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">13</span> Preloaded data and mtcars</a></li>
-<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
-<li><a class="" href="more-dplyr.html"><span class="header-section-number">15</span> More DPLYR</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">16</span> DPLYR</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">17</span> Linear Regression</a></li>
-<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic Regression</a></li>
-<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">20</span> Dealing with Errors</a></li>
-<li><a class="" href="practice-final-exam.html"><span class="header-section-number">21</span> Practice Final Exam</a></li>
-<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">22</span> Data Analytics I Quizzes</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="active" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">13</span> GDH Ice Cream</a></li>
+<li><a class="" href="more-dplyr.html"><span class="header-section-number">14</span> More DPLYR</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">15</span> DPLYR</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">17</span> Linear Regression Practice</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">18</span> Logistic Regression</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></li>
+<li><a class="" href="practice-final-exam.html"><span class="header-section-number">20</span> Practice Final Exam</a></li>
+<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -68,13 +67,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-basics" class="section level1" number="9">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-basics" class="section level1" number="8">
 <h1>
-<span class="header-section-number">9</span> R basics and workflows<a class="anchor" aria-label="anchor" href="#r-basics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8</span> R basics and workflows<a class="anchor" aria-label="anchor" href="#r-basics"><i class="fas fa-link"></i></a>
 </h1>
-<div id="basics-of-working-with-r-at-the-command-line-and-rstudio-goodies" class="section level2" number="9.1">
+<div id="basics-of-working-with-r-at-the-command-line-and-rstudio-goodies" class="section level2" number="8.1">
 <h2>
-<span class="header-section-number">9.1</span> Basics of working with R at the command line and RStudio goodies<a class="anchor" aria-label="anchor" href="#basics-of-working-with-r-at-the-command-line-and-rstudio-goodies"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> Basics of working with R at the command line and RStudio goodies<a class="anchor" aria-label="anchor" href="#basics-of-working-with-r-at-the-command-line-and-rstudio-goodies"><i class="fas fa-link"></i></a>
 </h2>
 <p>Launch RStudio/R.</p>
 <p>You will first intall R and then. RStudio.</p>
@@ -85,9 +84,9 @@
 <li><p><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">RStudio Quick keys</a></p></li>
 </ul>
 </div>
-<div id="in-rstudio---where-we-will-live" class="section level2" number="9.2">
+<div id="in-rstudio---where-we-will-live" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">9.2</span> In Rstudio - where we will live<a class="anchor" aria-label="anchor" href="#in-rstudio---where-we-will-live"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> In Rstudio - where we will live<a class="anchor" aria-label="anchor" href="#in-rstudio---where-we-will-live"><i class="fas fa-link"></i></a>
 </h2>
 <p>Notice the default panes:</p>
 <ul>
@@ -96,9 +95,9 @@
 <li>Files/Plots/Packages/Help (tabbed in lower right)</li>
 </ul>
 </div>
-<div id="section" class="section level2" number="9.3">
+<div id="section" class="section level2" number="8.3">
 <h2>
-<span class="header-section-number">9.3</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="http://www.sthda.com/sthda/RDoc/images/rstudio.png">Rstudio Console</a></p>
 <p>FYI: you can change the default location of the panes, among many other things: <a href="https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE">Customizing RStudio</a>.</p>
@@ -170,7 +169,7 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 <p>Not all functions have (or require) arguments:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/date.html">date</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Tue Jan 25 10:25:37 2022"</span></code></pre></div>
+<span class="co">#&gt; [1] "Wed Jan 26 08:39:22 2022"</span></code></pre></div>
 <p>Now look at your workspace – in the upper right pane. The workspace is where user-defined objects accumulate. You can also get a listing of these objects with commands:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">objects</a></span><span class="op">(</span><span class="op">)</span>
@@ -193,9 +192,9 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>or click the broom in RStudio’s Environment pane.</p>
 </div>
-<div id="workspace-and-working-directory" class="section level2" number="9.4">
+<div id="workspace-and-working-directory" class="section level2" number="8.4">
 <h2>
-<span class="header-section-number">9.4</span> Workspace and working directory<a class="anchor" aria-label="anchor" href="#workspace-and-working-directory"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4</span> Workspace and working directory<a class="anchor" aria-label="anchor" href="#workspace-and-working-directory"><i class="fas fa-link"></i></a>
 </h2>
 <p>One day you will need to quit R, go do something else and return to your analysis later (this is a very happy day).</p>
 <p>One day you will have multiple analyses going that use R and you want to keep them separate (a not so happy day).</p>
@@ -205,9 +204,9 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 <li>What about your analysis is “real,” i.e. will you save it as your lasting record of what happened?</li>
 <li>Where does your analysis “live?”</li>
 </ul>
-<div id="workspace-.rdata" class="section level3" number="9.4.1">
+<div id="workspace-.rdata" class="section level3" number="8.4.1">
 <h3>
-<span class="header-section-number">9.4.1</span> Workspace, <code>.RData</code><a class="anchor" aria-label="anchor" href="#workspace-.rdata"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.1</span> Workspace, <code>.RData</code><a class="anchor" aria-label="anchor" href="#workspace-.rdata"><i class="fas fa-link"></i></a>
 </h3>
 <p>As a beginning R user, it’s OK to consider your workspace “real.” <em>Very soon</em>, I urge you to evolve to the next level, where you consider your saved R scripts as “real.” (In either case, of course the input data is very much real and requires preservation!) With the input data and the R code you used, you can reproduce
 <em>everything</em>. You can make your analysis fancier. You can get to the bottom of puzzling results and discover and fix bugs in your code. You can reuse the code to conduct similar analyses in new projects. You can remake a figure with different aspect ratio or save is as TIFF instead of PDF. You are ready to take questions. You are ready for the future.</p>
@@ -225,9 +224,9 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 <pre><code>[Workspace loaded from ~/.RData]</code></pre>
 <p>indicating that your workspace has been restored. Look in the Workspace pane and you’ll see the same objects as before. In the History tab of the same pane, you should also see your command history. You’re back in business. This way of starting and stopping analytical work will not serve you well for long but it’s a start.</p>
 </div>
-<div id="working-directory" class="section level3" number="9.4.2">
+<div id="working-directory" class="section level3" number="8.4.2">
 <h3>
-<span class="header-section-number">9.4.2</span> Working directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.2</span> Working directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
 </h3>
 <p>Any process running on your computer has a notion of its “working directory.” In R, this is where R will look, by default, for files you ask it to load. It also where, by default, any files you write to disk will go. Chances are your current working directory is the directory we inspected above, i.e. the one where RStudio wanted to save the workspace.</p>
 <p>You can explicitly check your working directory with:</p>
@@ -242,9 +241,9 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 <p>But there’s a better way. A way that also puts you on the path to managing your R work like an expert.</p>
 </div>
 </div>
-<div id="exercises" class="section level2" number="9.5">
+<div id="exercises" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">9.5</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><p>Create an object called “cool_object” and assign it the number 100.</p></li>
@@ -258,22 +257,22 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="r-vs.-excel.html"><span class="header-section-number">8</span> R vs. Excel</a></div>
-<div class="next"><a href="objects-and-arithmetic.html"><span class="header-section-number">10</span> Objects and Arithmetic</a></div>
+<div class="prev"><a href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></div>
+<div class="next"><a href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#r-basics"><span class="header-section-number">9</span> R basics and workflows</a></li>
-<li><a class="nav-link" href="#basics-of-working-with-r-at-the-command-line-and-rstudio-goodies"><span class="header-section-number">9.1</span> Basics of working with R at the command line and RStudio goodies</a></li>
-<li><a class="nav-link" href="#in-rstudio---where-we-will-live"><span class="header-section-number">9.2</span> In Rstudio - where we will live</a></li>
-<li><a class="nav-link" href="#section"><span class="header-section-number">9.3</span></a></li>
+<li><a class="nav-link" href="#r-basics"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="nav-link" href="#basics-of-working-with-r-at-the-command-line-and-rstudio-goodies"><span class="header-section-number">8.1</span> Basics of working with R at the command line and RStudio goodies</a></li>
+<li><a class="nav-link" href="#in-rstudio---where-we-will-live"><span class="header-section-number">8.2</span> In Rstudio - where we will live</a></li>
+<li><a class="nav-link" href="#section"><span class="header-section-number">8.3</span></a></li>
 <li>
-<a class="nav-link" href="#workspace-and-working-directory"><span class="header-section-number">9.4</span> Workspace and working directory</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#workspace-.rdata"><span class="header-section-number">9.4.1</span> Workspace, .RData</a></li>
-<li><a class="nav-link" href="#working-directory"><span class="header-section-number">9.4.2</span> Working directory</a></li>
+<a class="nav-link" href="#workspace-and-working-directory"><span class="header-section-number">8.4</span> Workspace and working directory</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#workspace-.rdata"><span class="header-section-number">8.4.1</span> Workspace, .RData</a></li>
+<li><a class="nav-link" href="#working-directory"><span class="header-section-number">8.4.2</span> Working directory</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#exercises"><span class="header-section-number">9.5</span> Exercises</a></li>
+<li><a class="nav-link" href="#exercises"><span class="header-section-number">8.5</span> Exercises</a></li>
 </ul>
 
       <div class="book-extra">
@@ -291,7 +290,7 @@ argument or maybe the first two. After that, I always use <code>name = value</co
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-25.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

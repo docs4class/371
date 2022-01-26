@@ -6,7 +6,7 @@
 ]{book}
 \title{BADM 371 Intro to Data Analytics}
 \author{BADM 371}
-\date{2022-01-25}
+\date{2022-01-26}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -150,22 +150,6 @@ Also, this book has benefited greatly from lots of free, readily available resou
 \item
   \href{https://stackoverflow.com/questions/4862178/remove-rows-with-all-or-some-nas-missing-values-in-data-frame?rq=1}{stackoverflow.com, for example}
 \end{itemize}
-
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
-
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
-
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
-
-All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
-
-\hypertarget{an-unnumbered-section}{%
-\subsection*{An unnumbered section}\label{an-unnumbered-section}}
-\addcontentsline{toc}{subsection}{An unnumbered section}
-
-Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
 
 \hypertarget{syllabus}{%
 \chapter{Syllabus}\label{syllabus}}
@@ -350,14 +334,14 @@ Date & Topic \\
 \midrule
 \endhead
 Date & A1 \\
-Monday, January 10, 2022 & TARGET STORY \& INSTALL \\
-Wednesday, January 12, 2022 & BASICS 1 \\
-Friday, January 14, 2022 & QUIZ 1 - BASICS \\
+Monday, January 10, 2022 & R basics and install \\
+Wednesday, January 12, 2022 & R basics and workflows \\
+Friday, January 14, 2022 & QUIZ 1 \\
 Monday, January 17, 2022 & MLK Holiday \\
-Wednesday, January 19, 2022 & SELF LEARN \\
-Friday, January 21, 2022 & QUIZ: SELF LEARN \\
-Monday, January 24, 2022 & Class \\
-Wednesday, January 26, 2022 & Class \\
+Wednesday, January 19, 2022 & Objects and Arithmetic \\
+Friday, January 21, 2022 & QUIZ \\
+Monday, January 24, 2022 & Summaries and Subscripting \\
+Wednesday, January 26, 2022 & Matrices and \texttt{mtcars} \\
 Friday, January 28, 2022 & QUIZ \\
 Monday, January 31, 2022 & Class \\
 Wednesday, February 2, 2022 & Class \\
@@ -684,7 +668,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Tue Jan 25 10:26:48 2022"}
+\CommentTok{\#\textgreater{} [1] "Wed Jan 26 08:40:23 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2452,16 +2436,16 @@ All of the \texttt{dplyr} functions take a data frame (or tibble) as the first a
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1      746            746         0}
-\CommentTok{\#\textgreater{}  2  2013     1     1     1021           1023        {-}2}
-\CommentTok{\#\textgreater{}  3  2013     1     1     1455           1459        {-}4}
-\CommentTok{\#\textgreater{}  4  2013     1     2      714            715        {-}1}
-\CommentTok{\#\textgreater{}  5  2013     1     2     2036           2035         1}
-\CommentTok{\#\textgreater{}  6  2013     1     2      955           1000        {-}5}
-\CommentTok{\#\textgreater{}  7  2013     1     3     1418           1357        21}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1732           1730         2}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1918           1900        18}
-\CommentTok{\#\textgreater{} 10  2013     1     4      754            759        {-}5}
+\CommentTok{\#\textgreater{}  1  2013     1     1      639            640        {-}1}
+\CommentTok{\#\textgreater{}  2  2013     1     1      544            545        {-}1}
+\CommentTok{\#\textgreater{}  3  2013     1     1     1430           1430         0}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1531           1530         1}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1353           1350         3}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1628           1615        13}
+\CommentTok{\#\textgreater{}  7  2013     1     3      658            700        {-}2}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1527           1522         5}
+\CommentTok{\#\textgreater{}  9  2013     1     3     1909           1915        {-}6}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1603           1610        {-}7}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}

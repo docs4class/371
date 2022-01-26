@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 19 Logistic Regression | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 18 Logistic Regression | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="19.1 Introduction In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic...">
+<meta name="description" content="18.1 Introduction In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 19 Logistic Regression | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 18 Logistic Regression | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="19.1 Introduction In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic...">
+<meta property="og:description" content="18.1 Introduction In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 19 Logistic Regression | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="19.1 Introduction In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic...">
+<meta name="twitter:title" content="Chapter 18 Logistic Regression | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="18.1 Introduction In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -40,27 +40,26 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="hello-bookdown.html"><span class="header-section-number">2</span> Hello bookdown</a></li>
-<li><a class="" href="syllabus.html"><span class="header-section-number">3</span> Syllabus</a></li>
-<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">4</span> Our Class Rhythm</a></li>
-<li><a class="" href="end-in-mind.html"><span class="header-section-number">5</span> End in Mind</a></li>
-<li><a class="" href="schedule.html"><span class="header-section-number">6</span> Schedule</a></li>
-<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">7</span> Elephant in the room: R</a></li>
-<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">8</span> R vs. Excel</a></li>
-<li><a class="" href="r-basics.html"><span class="header-section-number">9</span> R basics and workflows</a></li>
-<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">10</span> Objects and Arithmetic</a></li>
-<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">11</span> Summaries and Subscripting</a></li>
-<li><a class="" href="matrices.html"><span class="header-section-number">12</span> Matrices</a></li>
-<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">13</span> Preloaded data and mtcars</a></li>
-<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
-<li><a class="" href="more-dplyr.html"><span class="header-section-number">15</span> More DPLYR</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">16</span> DPLYR</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">17</span> Linear Regression</a></li>
-<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
-<li><a class="active" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic Regression</a></li>
-<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">20</span> Dealing with Errors</a></li>
-<li><a class="" href="practice-final-exam.html"><span class="header-section-number">21</span> Practice Final Exam</a></li>
-<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">22</span> Data Analytics I Quizzes</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">13</span> GDH Ice Cream</a></li>
+<li><a class="" href="more-dplyr.html"><span class="header-section-number">14</span> More DPLYR</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">15</span> DPLYR</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">17</span> Linear Regression Practice</a></li>
+<li><a class="active" href="logistic-regression.html"><span class="header-section-number">18</span> Logistic Regression</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></li>
+<li><a class="" href="practice-final-exam.html"><span class="header-section-number">20</span> Practice Final Exam</a></li>
+<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -68,29 +67,29 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="logistic-regression" class="section level1" number="19">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="logistic-regression" class="section level1" number="18">
 <h1>
-<span class="header-section-number">19</span> Logistic Regression<a class="anchor" aria-label="anchor" href="#logistic-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18</span> Logistic Regression<a class="anchor" aria-label="anchor" href="#logistic-regression"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-5" class="section level2" number="19.1">
+<div id="introduction-5" class="section level2" number="18.1">
 <h2>
-<span class="header-section-number">19.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-5"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the previous chapter we discussed linear regression, a type of supervised machine learning often used to make qualitative predictions. Now, we are moving on to logistic regression, another form of supervised machine learning that is commonly used for making predictions of some Boolean variable.</p>
 <p>This form of machine learning is typically used when using a prediction to answer a yes or no question. For instance, let’s say we wanted to predict whether or not someone will suffer from a stroke. Using logistic regression, we can determine the probability that someone will either have a stroke (yes/true/positive result) or will not have a stroke (no/false/negative result).</p>
 <p>Also in this chapter we will discuss the difference between training and test data sets, why they are important, and how we apply them in logistic regression. This will help us to discuss the interpretation of these models and how we can test their accuracy.</p>
 <p>As stated previously, these topics may be difficult, and will be especially difficult if you still don’t understand previous machine learning topics discussed in this course. Be sure to ask questions and seek help if you begin to struggle. This section will call on concepts from the very beginning of the course.</p>
 </div>
-<div id="training-data-and-test-data" class="section level2" number="19.2">
+<div id="training-data-and-test-data" class="section level2" number="18.2">
 <h2>
-<span class="header-section-number">19.2</span> Training Data and Test Data<a class="anchor" aria-label="anchor" href="#training-data-and-test-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.2</span> Training Data and Test Data<a class="anchor" aria-label="anchor" href="#training-data-and-test-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>In supervised machine learning, we provide the computer with data and in essence “teach” it how to treat the data and create predictions with it. Training data is the data we feed our model so that it can make accurate predictions of the probability of an outcome. Meanwhile, test data is the data we compare our model to in order to assess its accuracy.</p>
 <p>So, using the example above, if we were building a model to test the probability of someone having a stroke, we would segment our main data set into two parts, a training set and a test set. Then, after we build our model, we would compare the model’s output to the actual data and see how many times it made accurate predictions, this would in turn give us our model’s accuracy.</p>
 </div>
-<div id="model-structure-1" class="section level2" number="19.3">
+<div id="model-structure-1" class="section level2" number="18.3">
 <h2>
-<span class="header-section-number">19.3</span> Model Structure<a class="anchor" aria-label="anchor" href="#model-structure-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.3</span> Model Structure<a class="anchor" aria-label="anchor" href="#model-structure-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s use the Auto data set to create a basic logistic regression model. Warning, we are going to be calling on information from earlier in the class a lot during these sections, so if you see any code you are unfamiliar with, first look in earlier class materials as it will not be reexplained here.</p>
 <p>Let’s load in some data from the ISLR package and make some predictions using the “mpg” variable. We want to find the median of the variable, and then predict whether a vehicle will have an mpg above or below that middle point. To do this with logistic regression, we must create a factor object using mpg that our model will try to predict.</p>
@@ -139,9 +138,9 @@
 <p>As you can see, the structure is very similar to that of a linear regression model except for our specification of the data set we want it to use (this can be done in linear regression, but we did not earlier in the class) and the family argument which we have not seen before.</p>
 <p>In this course, we will only every specify family to be binomial, this tells R that the variable we are predicting only has two outcomes. The data argument is used to specify a training data set if we were using one, which we are not in this example.</p>
 </div>
-<div id="model-interpretation" class="section level2" number="19.4">
+<div id="model-interpretation" class="section level2" number="18.4">
 <h2>
-<span class="header-section-number">19.4</span> Model Interpretation<a class="anchor" aria-label="anchor" href="#model-interpretation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.4</span> Model Interpretation<a class="anchor" aria-label="anchor" href="#model-interpretation"><i class="fas fa-link"></i></a>
 </h2>
 <p>This is where things start to make a more complicated turn. We are going to look at how we evaluate the model’s performance. First, we must tell R to make the prediction and store the results in an object.</p>
 <div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
@@ -165,9 +164,9 @@
 <p>Looking at the table we just produced, our accuracy is not the greatest. In fact, it’s pretty terrible. We get our accuracy by adding up the two areas where our model and the actual data match (in this case where above/above and below/below overlap) and then we divide this number by the total number of observations we had in the data set. Using our R arithmetic knowledge, we find our accuracy to be .1122 or 11.22%…as stated before, a terrible accuracy. In fact, we typically aim for accuracy of 95% or better.</p>
 <p>However, having lower prediction accuracy is common and not necessarily a terrible thing. In fact, we sometimes learn more from inaccurate models than we do the more effective ones. For instance, we now know that perhaps our variables are not as correlated as we once thought, or perhaps we set the value for our mpg01.probs object too low. From here, the best thing to do is gather insights, tweak your model, and move on.</p>
 </div>
-<div id="review-questions-2" class="section level2" number="19.5">
+<div id="review-questions-2" class="section level2" number="18.5">
 <h2>
-<span class="header-section-number">19.5</span> Review Questions<a class="anchor" aria-label="anchor" href="#review-questions-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.5</span> Review Questions<a class="anchor" aria-label="anchor" href="#review-questions-2"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><p>What is the difference between logistic regression and linear regression? What is an example of an application for each of them?</p></li>
@@ -192,17 +191,17 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></div>
-<div class="next"><a href="dealing-with-errors.html"><span class="header-section-number">20</span> Dealing with Errors</a></div>
+<div class="prev"><a href="linear-regression-practice.html"><span class="header-section-number">17</span> Linear Regression Practice</a></div>
+<div class="next"><a href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#logistic-regression"><span class="header-section-number">19</span> Logistic Regression</a></li>
-<li><a class="nav-link" href="#introduction-5"><span class="header-section-number">19.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#training-data-and-test-data"><span class="header-section-number">19.2</span> Training Data and Test Data</a></li>
-<li><a class="nav-link" href="#model-structure-1"><span class="header-section-number">19.3</span> Model Structure</a></li>
-<li><a class="nav-link" href="#model-interpretation"><span class="header-section-number">19.4</span> Model Interpretation</a></li>
-<li><a class="nav-link" href="#review-questions-2"><span class="header-section-number">19.5</span> Review Questions</a></li>
+<li><a class="nav-link" href="#logistic-regression"><span class="header-section-number">18</span> Logistic Regression</a></li>
+<li><a class="nav-link" href="#introduction-5"><span class="header-section-number">18.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#training-data-and-test-data"><span class="header-section-number">18.2</span> Training Data and Test Data</a></li>
+<li><a class="nav-link" href="#model-structure-1"><span class="header-section-number">18.3</span> Model Structure</a></li>
+<li><a class="nav-link" href="#model-interpretation"><span class="header-section-number">18.4</span> Model Interpretation</a></li>
+<li><a class="nav-link" href="#review-questions-2"><span class="header-section-number">18.5</span> Review Questions</a></li>
 </ul>
 
       <div class="book-extra">
@@ -220,7 +219,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-25.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

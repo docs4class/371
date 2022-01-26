@@ -7,14 +7,14 @@ This is a tentative schedule, **BUT** I will do my very best to stick to it, so 
 Date | Topic | 				
 |:-------|:------			
 | 	Date	| 	A1	| 
-| 	Monday, January 10, 2022	| 	TARGET STORY & INSTALL	| 
-| 	Wednesday, January 12, 2022	| 	BASICS 1	| 
-| 	Friday, January 14, 2022	| 	QUIZ 1 - BASICS	| 
+| 	Monday, January 10, 2022	| 	R basics and install	| 
+| 	Wednesday, January 12, 2022	| 	R basics and workflows	| 
+| 	Friday, January 14, 2022	| 	QUIZ 1 	| 
 | 	Monday, January 17, 2022	| 	MLK Holiday	| 
-| 	Wednesday, January 19, 2022	| 	SELF LEARN	| 
-| 	Friday, January 21, 2022	| 	QUIZ: SELF LEARN	| 
-| 	Monday, January 24, 2022	| 	Class	| 
-| 	Wednesday, January 26, 2022	| 	Class	| 
+| 	Wednesday, January 19, 2022	| 	Objects and Arithmetic	| 
+| 	Friday, January 21, 2022	| 	QUIZ	| 
+| 	Monday, January 24, 2022	| Summaries and Subscripting	| 
+| 	Wednesday, January 26, 2022	| 	Matrices and `mtcars`	| 
 | 	Friday, January 28, 2022	| 	QUIZ	| 
 | 	Monday, January 31, 2022	| 	Class	| 
 | 	Wednesday, February 2, 2022	| 	Class	| 

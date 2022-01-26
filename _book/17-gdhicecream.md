@@ -31,8 +31,6 @@ Please answer the following questions *using R*:.
 
 GDH provides ice cream cones for its customers.  In the last three years GDH used ice cream, in pounds, by month, as shown in the attached file.
 
-
-
 1.	In R, create the above data frame and name it ice.cream
 2.	What is another way you could have created the same data set?
 3.	Using R, what is the mean using for the months of Feb and Oct?
@@ -43,3 +41,4 @@ GDH provides ice cream cones for its customers.  In the last three years GDH use
 8.	Also, you May want to check out this link to look at something called dataframes that may help with this assignment (but is not absolutely necessary) https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame
 9. Can you transpose your matrix?
 10. Can you add meaningful row names and column names?
+

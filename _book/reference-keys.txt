@@ -1,6 +1,4 @@
 introduction
-hello-bookdown
-a-section
 syllabus
 course-objectives-and-learning-outcomes
 text-and-resources
