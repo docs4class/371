@@ -4,7 +4,7 @@ R comes with several built-in data sets, **which are generally used as demo data
 
 To see the datasets type:
 
-`mtcars`
+`data()`
 
 
 
@@ -200,7 +200,7 @@ quantile(mtcars$wt, c(.2, .4, .8))
 
 # More simple data wrangling
 
-## a matirx
+## a nice, fun little matrix for **you**
 
 
 ```
@@ -224,7 +224,7 @@ quantile(mtcars$wt, c(.2, .4, .8))
 
 7. How do you **know** you have turned `x` into a data frame?
 
-## More fun
+## More fun (this class is really **awesome** isn't it?)
 
 
 
@@ -287,39 +287,5 @@ plot(hp,mpg)
 
 `Error in plot(hp, mpg) : object 'hp' not found`
 
-Bonus: What is a topic that you find confusing at this point in class? 
+> Bonus: What is a topic that you find confusing at this point in class? 
 
-## open the `women` data set 
- 
-1. Add a another variable (column) to the `women` dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0.  You shoud get something that looks similar to mine.
-
-
-
-```
-FALSE # A tibble: 15 x 3
-FALSE    height weight   GPA
-FALSE     <dbl>  <dbl> <dbl>
-FALSE  1     58    115   1.5
-FALSE  2     59    117   3.7
-FALSE  3     60    120   4  
-FALSE  4     61    123   1  
-FALSE  5     62    126   3  
-FALSE  6     63    129   2.5
-FALSE  7     64    132   3.8
-FALSE  8     65    135   0.8
-FALSE  9     66    139   2  
-FALSE 10     67    142   4  
-FALSE 11     68    146   1  
-FALSE 12     69    150   3  
-FALSE 13     70    154   2.5
-FALSE 14     71    159   3  
-FALSE 15     72    164   4
-```
-
-2. Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction? 
-
-3. Is GPA a significant predictor of height and how do you know? 
-
-4. Create a figure showing a best fit line on of height and GPA.  
-
-5. Install the dplyr package into your Rstudio session.

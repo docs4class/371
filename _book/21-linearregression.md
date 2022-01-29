@@ -1,6 +1,13 @@
-# Linear Regression
+#Machine Learning?
 
-## What is Machine Learning?
+> Have we talked about the Target Pregnancy Story yet?
+
+::: {.rmdimportant}
+
+**How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did**
+
+:::
+
 
 This is where the fun stuff begins! What we have learned up to this point has barely scratched the surface of what R is capable of. In the world of data science, R is used for three primary purposes, those purposes are **(1) data transformation, (2) data wrangling, (3) machine learning**. The other two purposes have been covered in earlier chapters of this book. The reason we covered the other topics first is that that lay the foundation. In the real world, it is likely you will never be given a clean data set, and you will have to do some wrangling and transformation before anything else is possible. After all, in the experience of many data science students, cleaning the data is the most tedious and time consuming process of a project. 
 
@@ -9,6 +16,8 @@ Enough of the old stuff, what is machine learning? According to the Merriam-Webs
 There are two branches of machine learning, supervised and unsupervised. Both have their own unique uses, however in this course we will focus on supervised machine learning. Supervised machine learning required us to provide a clean data set with clearly defined variables and instructions. Essentially, we give the computer the information it needs and provide it with specific instructions detailing what we would like to see happen, and it does the rest. Linear regression is typically the first method of supervised learning people are introduced to, and it will be the focus of this chapter. 
 
 Note, these concepts are not all common sense and can be difficult to wrap your head around at times. Be sure to constantly turn to your instructor or peers for assistance and remember that there are hundreds of online resources at your disposal. As with anything though, practice makes perfect. The popular rule states that mastering a skill can take upwards of 10,000 hours! Now, this course is not going to take you 10 years to complete, however the goal is that by the end of this chapter you will know your way around the basics of linear regression. 
+
+# Quick Linear Regression
 
 ## Quick Linear regression using `Loblolly`
 
@@ -70,6 +79,41 @@ of the Loblolly pine trees. To find the correlation coefficient, use the command
 10.  What does this command do and mean: `plot(Loblolly)`?
 
 ![](21-linearregression_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+
+## Excercises for **you** 
+
+
+ 
+1.Open the `women` data set. Add a new variable (column) to the `women` dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0.  You shoud get something that looks similar to mine.
+
+
+
+```
+FALSE    height weight GPA
+FALSE 1      58    115 1.5
+FALSE 2      59    117 3.7
+FALSE 3      60    120 4.0
+FALSE 4      61    123 1.0
+FALSE 5      62    126 3.0
+FALSE 6      63    129 2.5
+FALSE 7      64    132 3.8
+FALSE 8      65    135 0.8
+FALSE 9      66    139 2.0
+FALSE 10     67    142 4.0
+FALSE 11     68    146 1.0
+FALSE 12     69    150 3.0
+FALSE 13     70    154 2.5
+FALSE 14     71    159 3.0
+FALSE 15     72    164 4.0
+```
+
+2. Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction? 
+
+3. Is GPA a significant predictor of height and how do you know? 
+
+4. Create a figure showing a best fit line on of height and GPA.  
+
+5. Install the dplyr package into your Rstudio session.
 
 
 # Deeper Linear Regression

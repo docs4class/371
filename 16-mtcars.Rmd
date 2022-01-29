@@ -4,7 +4,7 @@ R comes with several built-in data sets, **which are generally used as demo data
 
 To see the datasets type:
 
-`mtcars`
+`data()`
 
 
 ```{r setup, include=FALSE}
@@ -83,7 +83,7 @@ cor(mtcars)
 
 # More simple data wrangling
 
-## a matirx
+## a nice, fun little matrix for **you**
 
 ```{r, echo=FALSE}
 x <- matrix(1:15,nr=3)
@@ -104,7 +104,7 @@ x
 
 7. How do you **know** you have turned `x` into a data frame?
 
-## More fun
+## More fun (this class is really **awesome** isn't it?)
 
 ```{r, echo=FALSE}
 df <- data.frame(matrix(1:100, nr=10))
@@ -145,24 +145,5 @@ plot(hp,mpg)
 
 `Error in plot(hp, mpg) : object 'hp' not found`
 
-Bonus: What is a topic that you find confusing at this point in class? 
+> Bonus: What is a topic that you find confusing at this point in class? 
 
-## open the `women` data set 
- 
-1. Add a another variable (column) to the `women` dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0.  You shoud get something that looks similar to mine.
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, comment=FALSE}
-data(women)
-women$GPA <- c(1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0)
-library(dplyr)
-dplyr::tibble(women)
-```
-
-2. Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction? 
-
-3. Is GPA a significant predictor of height and how do you know? 
-
-4. Create a figure showing a best fit line on of height and GPA.  
-
-5. Install the dplyr package into your Rstudio session.
