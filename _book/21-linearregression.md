@@ -10,6 +10,65 @@ There are two branches of machine learning, supervised and unsupervised. Both ha
 
 Note, these concepts are not all common sense and can be difficult to wrap your head around at times. Be sure to constantly turn to your instructor or peers for assistance and remember that there are hundreds of online resources at your disposal. As with anything though, practice makes perfect. The popular rule states that mastering a skill can take upwards of 10,000 hours! Now, this course is not going to take you 10 years to complete, however the goal is that by the end of this chapter you will know your way around the basics of linear regression. 
 
+## Quick summary using `Loblolly`
+
+1. load `Loblolly` and create a scatter plot of the data so plot so that age is the independent variable and height is the
+dependent variable.
+
+![](21-linearregression_files/figure-epub3/unnamed-chunk-1-1.png)<!-- -->
+
+2. Notice that R automatically labeled the x- and y-axes, but we also want our scatter plot to
+have a main title. To add a title, use the command `title(main = “Loblolly Pine Tree Heights”)`.
+
+![](21-linearregression_files/figure-epub3/unnamed-chunk-2-1.png)<!-- -->
+
+3. To find a linear model that relates the age and height of the loblolly pine trees, we will use the
+command `fit1<-lm(Loblolly$height~Loblolly$age)`. Think of this as slope-intercept form (y=mx+b). 
+
+4. To see the model, type `fit1`
+
+
+```r
+fit1 <- lm(Loblolly$height~Loblolly$age)
+fit1
+#> 
+#> Call:
+#> lm(formula = Loblolly$height ~ Loblolly$age)
+#> 
+#> Coefficients:
+#>  (Intercept)  Loblolly$age  
+#>       -1.312         2.591
+```
+
+5. Now we want to add the graph of this line of best fit to our scatter plot. To do this, use the
+command `yfit1<-fit1$fitted.values`. To see it on your scatter plot, type `lines(Loblolly$age, yfit1)`.
+
+![](21-linearregression_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+
+9. The final piece of information we want about our data is the correlation of the age and height
+of the Loblolly pine trees. To find the correlation coefficient, use the command `cor(Loblolly$height, Loblolly$age)` 
+
+
+```
+#> [1] 0.9899132
+#> 
+#> 	Pearson's product-moment correlation
+#> 
+#> data:  Loblolly$height and Loblolly$age
+#> t = 63.272, df = 82, p-value < 2.2e-16
+#> alternative hypothesis: true correlation is not equal to 0
+#> 95 percent confidence interval:
+#>  0.9844505 0.9934631
+#> sample estimates:
+#>       cor 
+#> 0.9899132
+```
+
+
+10.  What does this command do and mean: `plot(Loblolly)`?
+
+![](21-linearregression_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+
 
 ## Model Structure
 
@@ -161,4 +220,5 @@ data("Credit")
 attach(Credit)
 q1 <- lm(Cards ~ Limit + Balance + Education)
 ```
+
 

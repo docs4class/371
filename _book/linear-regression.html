@@ -81,12 +81,68 @@
 <p>There are two branches of machine learning, supervised and unsupervised. Both have their own unique uses, however in this course we will focus on supervised machine learning. Supervised machine learning required us to provide a clean data set with clearly defined variables and instructions. Essentially, we give the computer the information it needs and provide it with specific instructions detailing what we would like to see happen, and it does the rest. Linear regression is typically the first method of supervised learning people are introduced to, and it will be the focus of this chapter.</p>
 <p>Note, these concepts are not all common sense and can be difficult to wrap your head around at times. Be sure to constantly turn to your instructor or peers for assistance and remember that there are hundreds of online resources at your disposal. As with anything though, practice makes perfect. The popular rule states that mastering a skill can take upwards of 10,000 hours! Now, this course is not going to take you 10 years to complete, however the goal is that by the end of this chapter you will know your way around the basics of linear regression.</p>
 </div>
-<div id="model-structure" class="section level2" number="17.2">
+<div id="quick-summary-using-loblolly" class="section level2" number="17.2">
 <h2>
-<span class="header-section-number">17.2</span> Model Structure<a class="anchor" aria-label="anchor" href="#model-structure"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.2</span> Quick summary using <code>Loblolly</code><a class="anchor" aria-label="anchor" href="#quick-summary-using-loblolly"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>load <code>Loblolly</code> and create a scatter plot of the data so plot so that age is the independent variable and height is the
+dependent variable.</li>
+</ol>
+<div class="inline-figure"><img src="21-linearregression_files/figure-html/unnamed-chunk-1-1.png" width="672"></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Notice that R automatically labeled the x- and y-axes, but we also want our scatter plot to
+have a main title. To add a title, use the command <code>title(main = “Loblolly Pine Tree Heights”)</code>.</li>
+</ol>
+<div class="inline-figure"><img src="21-linearregression_files/figure-html/unnamed-chunk-2-1.png" width="672"></div>
+<ol start="3" style="list-style-type: decimal">
+<li><p>To find a linear model that relates the age and height of the loblolly pine trees, we will use the
+command <code>fit1&lt;-lm(Loblolly$height~Loblolly$age)</code>. Think of this as slope-intercept form (y=mx+b).</p></li>
+<li><p>To see the model, type <code>fit1</code></p></li>
+</ol>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">fit1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Loblolly</span><span class="op">$</span><span class="va">height</span><span class="op">~</span><span class="va">Loblolly</span><span class="op">$</span><span class="va">age</span><span class="op">)</span>
+<span class="va">fit1</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Call:</span>
+<span class="co">#&gt; lm(formula = Loblolly$height ~ Loblolly$age)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Coefficients:</span>
+<span class="co">#&gt;  (Intercept)  Loblolly$age  </span>
+<span class="co">#&gt;       -1.312         2.591</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Now we want to add the graph of this line of best fit to our scatter plot. To do this, use the
+command <code>yfit1&lt;-fit1$fitted.values</code>. To see it on your scatter plot, type <code>lines(Loblolly$age, yfit1)</code>.</li>
+</ol>
+<div class="inline-figure"><img src="21-linearregression_files/figure-html/unnamed-chunk-4-1.png" width="672"></div>
+<ol start="9" style="list-style-type: decimal">
+<li>The final piece of information we want about our data is the correlation of the age and height
+of the Loblolly pine trees. To find the correlation coefficient, use the command <code>cor(Loblolly$height, Loblolly$age)</code>
+</li>
+</ol>
+<pre><code>#&gt; [1] 0.9899132
+#&gt; 
+#&gt;  Pearson's product-moment correlation
+#&gt; 
+#&gt; data:  Loblolly$height and Loblolly$age
+#&gt; t = 63.272, df = 82, p-value &lt; 2.2e-16
+#&gt; alternative hypothesis: true correlation is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  0.9844505 0.9934631
+#&gt; sample estimates:
+#&gt;       cor 
+#&gt; 0.9899132</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>What does this command do and mean: <code>plot(Loblolly)</code>?</li>
+</ol>
+<div class="inline-figure"><img src="21-linearregression_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
+</div>
+<div id="model-structure" class="section level2" number="17.3">
+<h2>
+<span class="header-section-number">17.3</span> Model Structure<a class="anchor" aria-label="anchor" href="#model-structure"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s look at a very simple model first. For this example, we will need to import the Introduction to Statistical Learning package (ISLR). We will use the “credit” data set that is part of the ISLR package.</p>
-<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.statlearning.com">ISLR</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Credit"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">Credit</span><span class="op">)</span>
@@ -94,12 +150,12 @@
 <span class="va">M1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Balance</span> <span class="op">~</span> <span class="va">Limit</span> <span class="op">+</span> <span class="va">Ethnicity</span><span class="op">)</span></code></pre></div>
 <p>lm is the function we use to create linear regression models. Now, before we discuss interpreting the results we get from this function, we will discuss the different parts of the model. The “~” symbol is the key to this entire equation. We are telling R to predict whatever is on the left side of the tilde using the variables on the right.</p>
 </div>
-<div id="interpretation-of-the-model" class="section level2" number="17.3">
+<div id="interpretation-of-the-model" class="section level2" number="17.4">
 <h2>
-<span class="header-section-number">17.3</span> Interpretation of the Model<a class="anchor" aria-label="anchor" href="#interpretation-of-the-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.4</span> Interpretation of the Model<a class="anchor" aria-label="anchor" href="#interpretation-of-the-model"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s run a summary on this model and see what we get.</p>
-<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">M1</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
@@ -128,32 +184,32 @@
 <span class="co">#&gt; Multiple R-squared:  0.743,  Adjusted R-squared:  0.7411 </span>
 <span class="co">#&gt; F-statistic: 381.6 on 3 and 396 DF,  p-value: &lt; 2.2e-16</span></code></pre></div>
 <p>There is a lot of statistical jargon included in our summary that may be unfamiliar to those who have not taken statistics before. That is okay, however, because we are going to breakdown the main statistics we are interested in. Let’s start with our variables and their significance in the model.</p>
-<div id="p-values" class="section level3" number="17.3.1">
+<div id="p-values" class="section level3" number="17.4.1">
 <h3>
-<span class="header-section-number">17.3.1</span> P-Values<a class="anchor" aria-label="anchor" href="#p-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.4.1</span> P-Values<a class="anchor" aria-label="anchor" href="#p-values"><i class="fas fa-link"></i></a>
 </h3>
 <p>The p-value of our model helps us either prove or disprove the null-hypothesis of our test. In the case of this class, the null-hypothesis is that there is no relationship between the variables we are using to make the predictions and the actual variable we are predicting. In other words, the smaller our p-value the higher the level of significance there is between our variables. When we run a summary of our linear regression model we are give multiple p-values.</p>
 <p>First, under coefficients, they are listed for each variable. This can help us optimize our model because we can see what variables are helping make the model more accurate versus those that may be hindering its performance. Also notice the asterisks next to our p-values. R kindly puts up to three stars next to each variable to help us visually tell if they are significant, essentially more stars means a lower p-value and thus a higher correlation.
 The second place we see a p-value is at the bottom of our summary. This p-value will give us the overall correlation that exists in our model. As we see in this case, our p-values for this model is &lt; .00000000000000022, that is a tiny number and frankly a great p-value. Typically we want our p-value to be .05 or smaller. A p-value of .05 tells us that we have a confidence level of 95%.</p>
 </div>
-<div id="multiple-r-squared" class="section level3" number="17.3.2">
+<div id="multiple-r-squared" class="section level3" number="17.4.2">
 <h3>
-<span class="header-section-number">17.3.2</span> Multiple R-Squared<a class="anchor" aria-label="anchor" href="#multiple-r-squared"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.4.2</span> Multiple R-Squared<a class="anchor" aria-label="anchor" href="#multiple-r-squared"><i class="fas fa-link"></i></a>
 </h3>
 <p>R-squared tells us how well our model explains the variance in our variable. In other words, is the reason for the change in the independent variable actually due to our model’s prediction? The higher the r-squared, the more accurate our model is because the better the data fits it. The maximum value r-squared can be is 1.</p>
 <p>In our model’s case, we have a multiple r-squared of .743, this means our model is approximately 74.3% accurate as this is the amount of variance in the data caused by our dependent variable. Our r-squared could certainly be better. In fact, in the real world you typically are aiming for an r-squared above .9 or .95, which means you would have 90%-95% accuracy.</p>
 </div>
 </div>
-<div id="applying-the-model-to-make-predictions" class="section level2" number="17.4">
+<div id="applying-the-model-to-make-predictions" class="section level2" number="17.5">
 <h2>
-<span class="header-section-number">17.4</span> Applying the Model to Make Predictions<a class="anchor" aria-label="anchor" href="#applying-the-model-to-make-predictions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.5</span> Applying the Model to Make Predictions<a class="anchor" aria-label="anchor" href="#applying-the-model-to-make-predictions"><i class="fas fa-link"></i></a>
 </h2>
 <p>This type of regression is refereed to as linear for a reason. If we were to visualize our model on a quadratic plane, we would see a line of best fit that would travel along through our data. This means we can simplify the model to fit the slope-intercept equation:</p>
 <p>y = m(x)+b</p>
 <p>In our case the slope of our line is related to the independent variables. The sum of these slopes will give us the overall slope of our line and the intercept is provided by the equation summary. If we modify this equation to be more applicable to our situation we would get something like this:</p>
 <p>y = m<sub>1</sub>x<sub>1</sub> + m<sub>2</sub>x<sub>2</sub> … + b</p>
 <p>Let’s look back at our example model from before</p>
-<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">M1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Balance</span> <span class="op">~</span> <span class="va">Limit</span> <span class="op">+</span> <span class="va">Ethnicity</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">M1</span><span class="op">)</span>
 <span class="co">#&gt; </span>
@@ -185,15 +241,15 @@ The second place we see a p-value is at the bottom of our summary. This p-value 
 <p>We see that our limit variable has an estimate of 1.718e-01, this is our slope. When dealing with quantitative variables, we simply multiply our slope by the intended independent variable. So, if we wanted to find the balance of someone with a limit of 400, we would multiply 1.718e-01 by 400.</p>
 <p>With the qualitative variables, in this case ethnicity, we multiply the estimate of the TRUE values by 1 and FALSE values by 0, thus cancelling the FALSE values out.</p>
 <p>Let’s look at an example. If we used our above equation to predict the balance of someone who was Caucasian and has a credit limit of 500, here is the equation we would set up:</p>
-<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">y</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1.718e-1</span><span class="op">*</span><span class="fl">500</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1.381e+01</span><span class="op">*</span><span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">2.835e+01</span><span class="op">*</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="op">-</span><span class="fl">3.078e+02</span><span class="op">)</span>
 <span class="va">y</span>
 <span class="co">#&gt; [1] -208.09</span></code></pre></div>
 <p>So, according to our model our customer would have a balance of -208.09. This number may seem funny, but keep in mind that our r-squared was not the best for this model making it inaccurate and the ethnicity of the customer was not highly correlated with the balance. Both of these facts may cause our prediction to be off. If we were actually creating a model that could predict balance, we would want to look at some of the more correlated variables in the data set.</p>
 </div>
-<div id="review-questions-1" class="section level2" number="17.5">
+<div id="review-questions-1" class="section level2" number="17.6">
 <h2>
-<span class="header-section-number">17.5</span> Review Questions<a class="anchor" aria-label="anchor" href="#review-questions-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.6</span> Review Questions<a class="anchor" aria-label="anchor" href="#review-questions-1"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><p>Create a linear model predicting using the ISLR data set that predicts a customer’s credit limit based on their age, current balance, and the number of cards they have.</p></li>
@@ -203,7 +259,7 @@ The second place we see a p-value is at the bottom of our summary. This p-value 
 <li><p>What would be the credit limit of a 29 year old with 5 cards and a total balance of 1500?</p></li>
 <li><p>Explain what the following piece of code does</p></li>
 </ol>
-<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.statlearning.com">ISLR</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Credit"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">Credit</span><span class="op">)</span>
@@ -219,15 +275,16 @@ The second place we see a p-value is at the bottom of our summary. This p-value 
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#linear-regression"><span class="header-section-number">17</span> Linear Regression</a></li>
 <li><a class="nav-link" href="#what-is-machine-learning"><span class="header-section-number">17.1</span> What is Machine Learning?</a></li>
-<li><a class="nav-link" href="#model-structure"><span class="header-section-number">17.2</span> Model Structure</a></li>
+<li><a class="nav-link" href="#quick-summary-using-loblolly"><span class="header-section-number">17.2</span> Quick summary using Loblolly</a></li>
+<li><a class="nav-link" href="#model-structure"><span class="header-section-number">17.3</span> Model Structure</a></li>
 <li>
-<a class="nav-link" href="#interpretation-of-the-model"><span class="header-section-number">17.3</span> Interpretation of the Model</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#p-values"><span class="header-section-number">17.3.1</span> P-Values</a></li>
-<li><a class="nav-link" href="#multiple-r-squared"><span class="header-section-number">17.3.2</span> Multiple R-Squared</a></li>
+<a class="nav-link" href="#interpretation-of-the-model"><span class="header-section-number">17.4</span> Interpretation of the Model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#p-values"><span class="header-section-number">17.4.1</span> P-Values</a></li>
+<li><a class="nav-link" href="#multiple-r-squared"><span class="header-section-number">17.4.2</span> Multiple R-Squared</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#applying-the-model-to-make-predictions"><span class="header-section-number">17.4</span> Applying the Model to Make Predictions</a></li>
-<li><a class="nav-link" href="#review-questions-1"><span class="header-section-number">17.5</span> Review Questions</a></li>
+<li><a class="nav-link" href="#applying-the-model-to-make-predictions"><span class="header-section-number">17.5</span> Applying the Model to Make Predictions</a></li>
+<li><a class="nav-link" href="#review-questions-1"><span class="header-section-number">17.6</span> Review Questions</a></li>
 </ul>
 
       <div class="book-extra">

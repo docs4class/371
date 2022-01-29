@@ -90,8 +90,6 @@ x <- matrix(1:15,nr=3)
 x
 ```
 
-
-
 1. Write the code that creates this matrix:
 
 2. Write DIFFERENT code that creates this matrix in an alternate way:

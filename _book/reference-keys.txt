@@ -86,6 +86,7 @@ excercies
 a-neat-resource
 linear-regression
 what-is-machine-learning
+quick-summary-using-loblolly
 model-structure
 interpretation-of-the-model
 p-values

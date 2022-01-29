@@ -210,8 +210,6 @@ quantile(mtcars$wt, c(.2, .4, .8))
 #> [3,]    3    6    9   12   15
 ```
 
-
-
 1. Write the code that creates this matrix:
 
 2. Write DIFFERENT code that creates this matrix in an alternate way:
