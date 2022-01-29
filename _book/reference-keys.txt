@@ -63,8 +63,8 @@ problem-introduction
 assignment
 linear-regression
 what-is-machine-learning
-quick-summary-using-loblolly
-model-structure
+quick-linear-regression-using-loblolly
+deeper-linear-regression
 interpretation-of-the-model
 p-values
 multiple-r-squared
@@ -111,6 +111,6 @@ starwars-excercises-1
 logistic-regression
 introduction-6
 training-data-and-test-data
-model-structure-1
+model-structure
 model-interpretation
 review-questions-2
