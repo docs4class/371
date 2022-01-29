@@ -6,7 +6,7 @@
 ]{book}
 \title{BADM 371 Intro to Data Analytics}
 \author{BADM 371}
-\date{2022-01-26}
+\date{2022-01-29}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -668,7 +668,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Wed Jan 26 08:40:23 2022"}
+\CommentTok{\#\textgreater{} [1] "Sat Jan 29 12:45:27 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1872,6 +1872,153 @@ This demonstration is based on the datasset \texttt{mtcars}.
   How many cars get more than 17 mpg?
 \end{enumerate}
 
+\hypertarget{more-simple-data-wrangling}{%
+\chapter{More simple data wrangling}\label{more-simple-data-wrangling}}
+
+\hypertarget{a-matirx}{%
+\section{a matirx}\label{a-matirx}}
+
+\begin{verbatim}
+#>      [,1] [,2] [,3] [,4] [,5]
+#> [1,]    1    4    7   10   13
+#> [2,]    2    5    8   11   14
+#> [3,]    3    6    9   12   15
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Write the code that creates this matrix:
+\item
+  Write DIFFERENT code that creates this matrix in an alternate way:
+\item
+  In the matrix above, what does \texttt{{[},4{]}} mean?
+\item
+  What code would return the value in the 3rd column and 3rd row?
+\item
+  What single line of would give you the average of the all the numbers in columns 2, 4, and 5 and in rows 1 and 3?
+\item
+  turn \texttt{x} into a data frame.
+\item
+  How do you \textbf{know} you have turned \texttt{x} into a data frame?
+\end{enumerate}
+
+\hypertarget{more-fun}{%
+\section{More fun}\label{more-fun}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}
+\CommentTok{\#\textgreater{}    X1 X2 X3 X4 X5 X6 X7 X8 X9 X10}
+\CommentTok{\#\textgreater{} 1   1 11 21 31 41 51 61 71 81  91}
+\CommentTok{\#\textgreater{} 2   2 12 22 32 42 52 62 72 82  92}
+\CommentTok{\#\textgreater{} 3   3 13 23 33 43 53 63 73 83  93}
+\CommentTok{\#\textgreater{} 4   4 14 24 34 44 54 64 74 84  94}
+\CommentTok{\#\textgreater{} 5   5 15 25 35 45 55 65 75 85  95}
+\CommentTok{\#\textgreater{} 6   6 16 26 36 46 56 66 76 86  96}
+\CommentTok{\#\textgreater{} 7   7 17 27 37 47 57 67 77 87  97}
+\CommentTok{\#\textgreater{} 8   8 18 28 38 48 58 68 78 88  98}
+\CommentTok{\#\textgreater{} 9   9 19 29 39 49 59 69 79 89  99}
+\CommentTok{\#\textgreater{} 10 10 20 30 40 50 60 70 80 90 100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Consider the dataframe above called \texttt{df}. What would running this code return \texttt{sum(df{[}7,7:10{]})}
+\item
+  How can you tell if an object in R is a dataframe?
+\item
+  How could you create the dataframe above called \texttt{df}?
+\item
+  What code would return the average of row 2 of \texttt{df}?
+\item
+  Consider \texttt{mtcars} dataset that comes preloaded with R that looks like this:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}                    mpg cyl disp  hp drat    wt  qsec vs am}
+\CommentTok{\#\textgreater{} Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1}
+\CommentTok{\#\textgreater{} Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0}
+\CommentTok{\#\textgreater{} Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0}
+\CommentTok{\#\textgreater{} Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0}
+\CommentTok{\#\textgreater{}                   gear carb}
+\CommentTok{\#\textgreater{} Mazda RX4            4    4}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag        4    4}
+\CommentTok{\#\textgreater{} Datsun 710           4    1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive       3    1}
+\CommentTok{\#\textgreater{} Hornet Sportabout    3    2}
+\CommentTok{\#\textgreater{} Valiant              3    1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Why do I get this error when I run the code below: \texttt{Error\ in\ plot(hp,\ mpg)\ :\ object\ \textquotesingle{}hp\textquotesingle{}\ not\ found}?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(hp,mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{Error\ in\ plot(hp,\ mpg)\ :\ object\ \textquotesingle{}hp\textquotesingle{}\ not\ found}
+
+Bonus: What is a topic that you find confusing at this point in class?
+
+\hypertarget{open-the-women-data-set}{%
+\section{\texorpdfstring{open the \texttt{women} data set}{open the women data set}}\label{open-the-women-data-set}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Add a another variable (column) to the \texttt{women} dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0. You shoud get something that looks similar to mine.
+\end{enumerate}
+
+\begin{verbatim}
+FALSE # A tibble: 15 x 3
+FALSE    height weight   GPA
+FALSE     <dbl>  <dbl> <dbl>
+FALSE  1     58    115   1.5
+FALSE  2     59    117   3.7
+FALSE  3     60    120   4  
+FALSE  4     61    123   1  
+FALSE  5     62    126   3  
+FALSE  6     63    129   2.5
+FALSE  7     64    132   3.8
+FALSE  8     65    135   0.8
+FALSE  9     66    139   2  
+FALSE 10     67    142   4  
+FALSE 11     68    146   1  
+FALSE 12     69    150   3  
+FALSE 13     70    154   2.5
+FALSE 14     71    159   3  
+FALSE 15     72    164   4
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction?
+\item
+  Is GPA a significant predictor of height and how do you know?
+\item
+  Create a figure showing a best fit line on of height and GPA.
+\item
+  Install the dplyr package into your Rstudio session.
+\end{enumerate}
+
 \hypertarget{gdh-ice-cream}{%
 \chapter{GDH Ice Cream}\label{gdh-ice-cream}}
 
@@ -2436,16 +2583,16 @@ All of the \texttt{dplyr} functions take a data frame (or tibble) as the first a
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1      639            640        {-}1}
-\CommentTok{\#\textgreater{}  2  2013     1     1      544            545        {-}1}
-\CommentTok{\#\textgreater{}  3  2013     1     1     1430           1430         0}
-\CommentTok{\#\textgreater{}  4  2013     1     2     1531           1530         1}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1353           1350         3}
-\CommentTok{\#\textgreater{}  6  2013     1     2     1628           1615        13}
-\CommentTok{\#\textgreater{}  7  2013     1     3      658            700        {-}2}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1527           1522         5}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1909           1915        {-}6}
-\CommentTok{\#\textgreater{} 10  2013     1     4     1603           1610        {-}7}
+\CommentTok{\#\textgreater{}  1  2013     1     1      659            705        {-}6}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1455           1459        {-}4}
+\CommentTok{\#\textgreater{}  3  2013     1     1     2058           2100        {-}2}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1735           1738        {-}3}
+\CommentTok{\#\textgreater{}  5  2013     1     2      807            810        {-}3}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1156           1200        {-}4}
+\CommentTok{\#\textgreater{}  7  2013     1     3     1810           1815        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1550           1457        53}
+\CommentTok{\#\textgreater{}  9  2013     1     3     1051           1050         1}
+\CommentTok{\#\textgreater{} 10  2013     1     4      937            922        15}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}

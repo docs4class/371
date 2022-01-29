@@ -54,6 +54,10 @@ exercises-2
 preloaded-data-and-mtcars
 practicing-with-mtcars-data-set
 excerises-for-you
+more-simple-data-wrangling
+a-matirx
+more-fun
+open-the-women-data-set
 gdh-ice-cream
 problem-introduction
 assignment

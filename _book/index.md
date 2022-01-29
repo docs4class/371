@@ -1,7 +1,7 @@
 --- 
 title: BADM 371 Intro to Data Analytics
 author: "BADM 371"
-date: "2022-01-26"
+date: "2022-01-29"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
