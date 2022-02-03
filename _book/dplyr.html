@@ -121,7 +121,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.4</span> Loading dplyr and the nycflights13 dataset<a class="anchor" aria-label="anchor" href="#loading-dplyr-and-the-nycflights13-dataset"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load packages</span>
 <span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressMessages</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadley/nycflights13">nycflights13</a></span><span class="op">)</span>
@@ -147,7 +147,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.5</span> Choosing columns: select, rename<a class="anchor" aria-label="anchor" href="#choosing-columns-select-rename"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># besides just using select() to pick columns...</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">carrier</span>, <span class="va">flight</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 336,776 x 2</span>
@@ -185,13 +185,13 @@ Groups of rows:</li>
 <span class="co">#&gt; #   flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,</span>
 <span class="co">#&gt; #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</span></code></pre></div>
-<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># hide a range of columns</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="va">dep_time</span><span class="op">:</span><span class="va">arr_delay</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># hide any column with a matching name</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"time"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># pick columns using a character vector of column names</span>
 <span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"carrier"</span>, <span class="st">"flight"</span>, <span class="st">"tailnum"</span><span class="op">)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/one_of.html">one_of</a></span><span class="op">(</span><span class="va">cols</span><span class="op">)</span><span class="op">)</span>
@@ -209,7 +209,7 @@ Groups of rows:</li>
 <span class="co">#&gt;  9 B6          79 N593JB </span>
 <span class="co">#&gt; 10 AA         301 N3ALAA </span>
 <span class="co">#&gt; # ... with 336,766 more rows</span></code></pre></div>
-<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># select() can be used to rename columns, though all columns not mentioned are dropped</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>tail <span class="op">=</span> <span class="va">tailnum</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 336,776 x 1</span>
@@ -252,7 +252,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.6</span> Choosing rows: filter, between, slice, sample_n, top_n, distinct<a class="anchor" aria-label="anchor" href="#choosing-rows-filter-between-slice-sample_n-top_n-distinct"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># filter() supports the use of multiple conditions</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">dep_time</span> <span class="op">&gt;=</span> <span class="fl">600</span>, <span class="va">dep_time</span> <span class="op">&lt;=</span> <span class="fl">605</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 2,460 x 19</span>
@@ -274,13 +274,13 @@ Groups of rows:</li>
 <span class="co">#&gt; #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   time_hour &lt;dttm&gt;</span></code></pre></div>
-<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># between() is a concise alternative for determing if numeric values fall in a range</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/between.html">between</a></span><span class="op">(</span><span class="va">dep_time</span>, <span class="fl">600</span>, <span class="fl">605</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># side note: is.na() can also be useful when filtering</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">dep_time</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># slice() filters rows by position</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1000</span><span class="op">:</span><span class="fl">1005</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 6 x 19</span>
@@ -327,16 +327,16 @@ Groups of rows:</li>
 <span class="co">#&gt; # Groups:   month, day [365]</span>
 <span class="co">#&gt;     year month   day dep_time sched_dep_time dep_delay</span>
 <span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1  2013     1     1     1934           1725       129</span>
-<span class="co">#&gt;  2  2013     1     1     2050           1959        51</span>
-<span class="co">#&gt;  3  2013     1     1     1834           1800        34</span>
-<span class="co">#&gt;  4  2013     1     2      829            830        -1</span>
-<span class="co">#&gt;  5  2013     1     2     1556           1600        -4</span>
-<span class="co">#&gt;  6  2013     1     2     2054           2040        14</span>
-<span class="co">#&gt;  7  2013     1     3      805            810        -5</span>
-<span class="co">#&gt;  8  2013     1     3     1919           1920        -1</span>
-<span class="co">#&gt;  9  2013     1     3     1451           1500        -9</span>
-<span class="co">#&gt; 10  2013     1     4     1155           1200        -5</span>
+<span class="co">#&gt;  1  2013     1     1     1431           1440        -9</span>
+<span class="co">#&gt;  2  2013     1     1     1330           1321         9</span>
+<span class="co">#&gt;  3  2013     1     1     1411           1315        56</span>
+<span class="co">#&gt;  4  2013     1     2     1939           1940        -1</span>
+<span class="co">#&gt;  5  2013     1     2     2027           2000        27</span>
+<span class="co">#&gt;  6  2013     1     2     2006           1945        21</span>
+<span class="co">#&gt;  7  2013     1     3     1049           1052        -3</span>
+<span class="co">#&gt;  8  2013     1     3     1811           1800        11</span>
+<span class="co">#&gt;  9  2013     1     3      701            705        -4</span>
+<span class="co">#&gt; 10  2013     1     4     2123           2125        -2</span>
 <span class="co">#&gt; # ... with 1,085 more rows, and 13 more variables:</span>
 <span class="co">#&gt; #   arr_time &lt;int&gt;, sched_arr_time &lt;int&gt;, arr_delay &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,</span>
@@ -389,7 +389,7 @@ Groups of rows:</li>
 <span class="co">#&gt; #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   time_hour &lt;dttm&gt;</span></code></pre></div>
-<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># unique rows can be identified using unique() from base R</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">origin</span>, <span class="va">dest</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 224 x 2</span>
@@ -406,7 +406,7 @@ Groups of rows:</li>
 <span class="co">#&gt;  9 JFK    MCO  </span>
 <span class="co">#&gt; 10 LGA    ORD  </span>
 <span class="co">#&gt; # ... with 214 more rows</span></code></pre></div>
-<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># dplyr provides an alternative that is more "efficient"</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">origin</span>, <span class="va">dest</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="op">)</span>
 
@@ -417,7 +417,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.7</span> Adding new variables: mutate, transmute, add_rownames<a class="anchor" aria-label="anchor" href="#adding-new-variables-mutate-transmute-add_rownames"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># mutate() creates a new variable (and keeps all existing variables)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>speed <span class="op">=</span> <span class="va">distance</span><span class="op">/</span><span class="va">air_time</span><span class="op">*</span><span class="fl">60</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 336,776 x 20</span>
@@ -456,7 +456,7 @@ Groups of rows:</li>
 <span class="co">#&gt;  9  405.</span>
 <span class="co">#&gt; 10  319.</span>
 <span class="co">#&gt; # ... with 336,766 more rows</span></code></pre></div>
-<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># example data frame with row names</span>
 <span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am</span>
@@ -518,7 +518,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.8</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup<a class="anchor" aria-label="anchor" href="#grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># summarise() can be used to count the number of rows in each group</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>cnt <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 12 x 2</span>
@@ -536,11 +536,11 @@ Groups of rows:</li>
 <span class="co">#&gt; 10    10 28889</span>
 <span class="co">#&gt; 11    11 27268</span>
 <span class="co">#&gt; 12    12 28135</span></code></pre></div>
-<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># tally() and count() can do this more concisely</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">tally</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># you can sort by the count</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>cnt <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">cnt</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 12 x 2</span>
@@ -558,11 +558,11 @@ Groups of rows:</li>
 <span class="co">#&gt; 10    11 27268</span>
 <span class="co">#&gt; 11     1 27004</span>
 <span class="co">#&gt; 12     2 24951</span></code></pre></div>
-<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># tally() and count() have a sort parameter for this purpose</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">tally</a></span><span class="op">(</span>sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">month</span>, sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># you can sum over a specific variable instead of simply counting rows</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>dist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">distance</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 12 x 2</span>
@@ -580,11 +580,11 @@ Groups of rows:</li>
 <span class="co">#&gt; 10    10 30012086</span>
 <span class="co">#&gt; 11    11 28639718</span>
 <span class="co">#&gt; 12    12 29954084</span></code></pre></div>
-<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># tally() and count() have a wt parameter for this purpose</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">tally</a></span><span class="op">(</span>wt <span class="op">=</span> <span class="va">distance</span><span class="op">)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">month</span>, wt <span class="op">=</span> <span class="va">distance</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># group_size() returns the counts as a vector</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_data.html">group_size</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;  [1] 27004 24951 28834 28330 28796 28243 29425 29327 27574</span>
@@ -593,7 +593,7 @@ Groups of rows:</li>
 <span class="co"># n_groups() simply reports the number of groups</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_data.html">n_groups</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; [1] 12</span></code></pre></div>
-<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># group by two variables, summarise, arrange (output is possibly confusing)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">month</span>, <span class="va">day</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>cnt <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">cnt</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">40</span><span class="op">)</span>
 <span class="co">#&gt; `summarise()` has grouped output by 'month'. You can override using the `.groups` argument.</span>
@@ -674,7 +674,7 @@ Groups of rows:</li>
 <li>It only recycles length 1 input.</li>
 <li>It returns a local data frame (a tbl_df).</li>
 </ul>
-<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># data_frame() example</span>
 <span class="fu"><a href="https://tibble.tidyverse.org/reference/deprecated.html">data_frame</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, b <span class="op">=</span> <span class="va">a</span><span class="op">*</span><span class="fl">2</span>, c <span class="op">=</span> <span class="st">'string'</span>, <span class="st">'d+e'</span> <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Warning: `data_frame()` was deprecated in tibble 1.1.0.</span>
@@ -700,7 +700,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.10</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join<a class="anchor" aria-label="anchor" href="#joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># create two simple data frames</span>
 <span class="op">(</span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/deprecated.html">data_frame</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"green"</span>,<span class="st">"yellow"</span>,<span class="st">"red"</span><span class="op">)</span>, num <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 2</span>
@@ -783,7 +783,7 @@ Groups of rows:</li>
 <span class="co">#&gt;   color   num</span>
 <span class="co">#&gt;   &lt;chr&gt; &lt;int&gt;</span>
 <span class="co">#&gt; 1 red       3</span></code></pre></div>
-<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sometimes matching variables don't have identical names</span>
 <span class="va">b</span> <span class="op">&lt;-</span> <span class="va">b</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>col <span class="op">=</span> <span class="va">color</span><span class="op">)</span>
 
@@ -799,7 +799,7 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">22.11</span> Viewing more output: print, View<a class="anchor" aria-label="anchor" href="#viewing-more-output-print-view"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># specify that you want to see more rows</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 336,776 x 19</span>
@@ -826,10 +826,10 @@ Groups of rows:</li>
 <span class="co">#&gt; #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   time_hour &lt;dttm&gt;</span></code></pre></div>
-<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># specify that you want to see ALL rows (don't run this!)</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># specify that you want to see all columns</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>width <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 336,776 x 19</span>
@@ -882,7 +882,7 @@ Groups of rows:</li>
 <span class="co">#&gt;  9 2013-01-01 06:00:00</span>
 <span class="co">#&gt; 10 2013-01-01 06:00:00</span>
 <span class="co">#&gt; # ... with 336,766 more rows</span></code></pre></div>
-<div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># show up to 1000 rows and all columns</span>
 <span class="va">flights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="op">)</span>
 

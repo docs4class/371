@@ -77,12 +77,6 @@ plot(Loblolly)
 
 Remember: **`~`** here means "explained by", so the formula mpg ~ wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:
 
-```{r}
-plot(mpg ~ wt, data = mtcars, col=2)
-fit <- lm(mpg ~ wt, data = mtcars)
-summary(fit)
-```
-
 ## Excercises for **you** 
 
 ### `mtcars`
@@ -98,7 +92,7 @@ summary(fit)
 
 Open the `trees` dataset in R.  
 
-1, What are the variables and what do they mean?
+1. What are the variables and what do they mean?
 2. Make a plot with Volume on the x axis and Height on the Y and add a best fit line.
 3. Use Girth and Height to predict Volume.  What would you predict for a tree with a Girth of 10 and a Height of 100 feet?
 4. Use Girth and Height to predict Volume.  What would you predict for a tree with a Girth of 10 and a Height of 15 meters?
