@@ -54,14 +54,15 @@
 <li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
 <li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
 <li><a class="active" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
-<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">16</span> Deeper Linear Regression</a></li>
-<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">17</span> Linear Regression Practice</a></li>
-<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">18</span> Dealing with Errors</a></li>
-<li><a class="" href="practice-final-exam.html"><span class="header-section-number">19</span> Practice Final Exam</a></li>
-<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">20</span> Data Analytics I Quizzes</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">21</span> DPLYR</a></li>
-<li><a class="" href="more-dplyr.html"><span class="header-section-number">22</span> More DPLYR</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">23</span> Logistic Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></li>
+<li><a class="" href="practice-final-exam.html"><span class="header-section-number">20</span> Practice Final Exam</a></li>
+<li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">22</span> DPLYR</a></li>
+<li><a class="" href="more-dplyr.html"><span class="header-section-number">23</span> More DPLYR</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">24</span> Logistic Regression</a></li>
 </ul>
 
         <div class="book-extra">
@@ -135,44 +136,15 @@ of the Loblolly pine trees. To find the correlation coefficient, use the command
 </ol>
 <div class="inline-figure"><img src="21-linearregression_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
 </div>
-<div id="excercises-for-you" class="section level2" number="15.2">
-<h2>
-<span class="header-section-number">15.2</span> Excercises for <strong>you</strong><a class="anchor" aria-label="anchor" href="#excercises-for-you"><i class="fas fa-link"></i></a>
-</h2>
-<p>1.Open the <code>women</code> data set. Add a new variable (column) to the <code>women</code> dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0. You shoud get something that looks similar to mine.</p>
-<pre><code>FALSE    height weight GPA
-FALSE 1      58    115 1.5
-FALSE 2      59    117 3.7
-FALSE 3      60    120 4.0
-FALSE 4      61    123 1.0
-FALSE 5      62    126 3.0
-FALSE 6      63    129 2.5
-FALSE 7      64    132 3.8
-FALSE 8      65    135 0.8
-FALSE 9      66    139 2.0
-FALSE 10     67    142 4.0
-FALSE 11     68    146 1.0
-FALSE 12     69    150 3.0
-FALSE 13     70    154 2.5
-FALSE 14     71    159 3.0
-FALSE 15     72    164 4.0</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction?</p></li>
-<li><p>Is GPA a significant predictor of height and how do you know?</p></li>
-<li><p>Create a figure showing a best fit line on of height and GPA.</p></li>
-<li><p>Install the dplyr package into your Rstudio session.</p></li>
-</ol>
-</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></div>
-<div class="next"><a href="deeper-linear-regression.html"><span class="header-section-number">16</span> Deeper Linear Regression</a></div>
+<div class="next"><a href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#quick-linear-regression"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
 <li><a class="nav-link" href="#quick-linear-regression-using-loblolly"><span class="header-section-number">15.1</span> Quick Linear regression using Loblolly</a></li>
-<li><a class="nav-link" href="#excercises-for-you"><span class="header-section-number">15.2</span> Excercises for you</a></li>
 </ul>
 
       <div class="book-extra">
@@ -190,7 +162,7 @@ FALSE 15     72    164 4.0</code></pre>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-01-29.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

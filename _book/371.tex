@@ -6,7 +6,7 @@
 ]{book}
 \title{BADM 371 Intro to Data Analytics}
 \author{BADM 371}
-\date{2022-01-29}
+\date{2022-02-03}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -668,7 +668,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Sat Jan 29 14:10:20 2022"}
+\CommentTok{\#\textgreater{} [1] "Thu Feb 03 08:40:11 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2158,8 +2158,79 @@ Think of \texttt{lm(Loblolly\$height\textasciitilde{}Loblolly\$age)} as the slop
 
 \includegraphics{21-linearregression_files/figure-latex/unnamed-chunk-6-1.pdf}
 
+\hypertarget{linear-regression-with-mtcars}{%
+\chapter{Linear Regression with mtcars}\label{linear-regression-with-mtcars}}
+
+Remember: \textbf{\texttt{\textasciitilde{}}} here means ``explained by'', so the formula mpg \textasciitilde{} wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ wt, }\AttributeTok{data =}\NormalTok{ mtcars, }\AttributeTok{col=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{21-linearregression_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ wt, }\AttributeTok{data =}\NormalTok{ mtcars)}
+\FunctionTok{summary}\NormalTok{(fit)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Call:}
+\CommentTok{\#\textgreater{} lm(formula = mpg \textasciitilde{} wt, data = mtcars)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Residuals:}
+\CommentTok{\#\textgreater{}     Min      1Q  Median      3Q     Max }
+\CommentTok{\#\textgreater{} {-}4.5432 {-}2.3647 {-}0.1252  1.4096  6.8727 }
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Coefficients:}
+\CommentTok{\#\textgreater{}             Estimate Std. Error t value Pr(\textgreater{}|t|)    }
+\CommentTok{\#\textgreater{} (Intercept)  37.2851     1.8776  19.858  \textless{} 2e{-}16 ***}
+\CommentTok{\#\textgreater{} wt           {-}5.3445     0.5591  {-}9.559 1.29e{-}10 ***}
+\CommentTok{\#\textgreater{} {-}{-}{-}}
+\CommentTok{\#\textgreater{} Signif. codes:  }
+\CommentTok{\#\textgreater{} 0 \textquotesingle{}***\textquotesingle{} 0.001 \textquotesingle{}**\textquotesingle{} 0.01 \textquotesingle{}*\textquotesingle{} 0.05 \textquotesingle{}.\textquotesingle{} 0.1 \textquotesingle{} \textquotesingle{} 1}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Residual standard error: 3.046 on 30 degrees of freedom}
+\CommentTok{\#\textgreater{} Multiple R{-}squared:  0.7528, Adjusted R{-}squared:  0.7446 }
+\CommentTok{\#\textgreater{} F{-}statistic: 91.38 on 1 and 30 DF,  p{-}value: 1.294e{-}10}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{excercises-for-you}{%
 \section{\texorpdfstring{Excercises for \textbf{you}}{Excercises for you}}\label{excercises-for-you}}
+
+\hypertarget{mtcars}{%
+\subsection{\texorpdfstring{\texttt{mtcars}}{mtcars}}\label{mtcars}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Which variable in the \texttt{mtcars} dataset do you think best predicts \texttt{mpg} and why?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 333?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 12 cylinders?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 333 and 12 cylinders?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 333, 12 cylinders, and weighs 4,000 pounds?
+\end{enumerate}
+
+\hypertarget{trees}{%
+\subsection{\texorpdfstring{\texttt{trees}}{trees}}\label{trees}}
+
+Open the \texttt{trees} dataset in R.
+
+1, What are the variables and what do they mean?
+2. Make a plot with Volume on the x axis and Height on the Y and add a best fit line.
+3. Use Girth and Height to predict Volume. What would you predict for a tree with a Girth of 10 and a Height of 100 feet?
+4. Use Girth and Height to predict Volume. What would you predict for a tree with a Girth of 10 and a Height of 15 meters?
+5. What is the maximum circumference of a tree in this dataset?
+
+\hypertarget{more-excercises-for-you}{%
+\section{\texorpdfstring{More Excercises for \textbf{you}}{More Excercises for you}}\label{more-excercises-for-you}}
 
 1.Open the \texttt{women} data set. Add a new variable (column) to the \texttt{women} dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0. You shoud get something that looks similar to mine.
 
@@ -3051,16 +3122,16 @@ All of the \texttt{dplyr} functions take a data frame (or tibble) as the first a
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1     1355           1356        {-}1}
-\CommentTok{\#\textgreater{}  2  2013     1     1      743            749        {-}6}
-\CommentTok{\#\textgreater{}  3  2013     1     1      732            735        {-}3}
-\CommentTok{\#\textgreater{}  4  2013     1     2      925            930        {-}5}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1057           1045        12}
-\CommentTok{\#\textgreater{}  6  2013     1     2     1926           1930        {-}4}
-\CommentTok{\#\textgreater{}  7  2013     1     3     1505           1509        {-}4}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1617           1545        32}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1658           1700        {-}2}
-\CommentTok{\#\textgreater{} 10  2013     1     4     1034           1032         2}
+\CommentTok{\#\textgreater{}  1  2013     1     1      917            920        {-}3}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1719           1720        {-}1}
+\CommentTok{\#\textgreater{}  3  2013     1     1     1631           1630         1}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1340           1229        71}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1527           1510        17}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1909           1621       168}
+\CommentTok{\#\textgreater{}  7  2013     1     3     2013           1950        23}
+\CommentTok{\#\textgreater{}  8  2013     1     3      655            659        {-}4}
+\CommentTok{\#\textgreater{}  9  2013     1     3      742            745        {-}3}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1745           1745         0}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}

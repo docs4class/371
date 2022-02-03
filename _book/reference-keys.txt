@@ -62,7 +62,11 @@ problem-introduction
 assignment
 quick-linear-regression
 quick-linear-regression-using-loblolly
+linear-regression-with-mtcars
 excercises-for-you
+mtcars
+trees
+more-excercises-for-you
 deeper-linear-regression
 interpretation-of-the-model
 p-values
