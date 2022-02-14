@@ -6,7 +6,7 @@
 ]{book}
 \title{BADM 371 Intro to Data Analytics}
 \author{BADM 371}
-\date{2022-02-03}
+\date{2022-02-14}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -668,7 +668,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Thu Feb 03 08:48:33 2022"}
+\CommentTok{\#\textgreater{} [1] "Mon Feb 14 10:20:06 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2478,42 +2478,75 @@ Using the data set mtcars data set:
   Be able to explain what adjusted R squared means.
 \end{enumerate}
 
-\hypertarget{dealing-with-errors}{%
-\chapter{Dealing with Errors}\label{dealing-with-errors}}
+\hypertarget{filters-and-packages}{%
+\chapter{Filters and packages}\label{filters-and-packages}}
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+Filtering data is one of the very basic operation when you work with data. You want to remove a part of the data that is invalid or simply you're not interested in. Or, you want to zero in on a particular part of the data you want to know more about
 
-So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and\ldots you get an error. Fortunately for you, you are not alone in this struggle, everyone battles with errors because unlike R, we are not experts at code syntax and we make mistakes. This short chapter will walk you through some techniques to help solve errors on your own and also provide some resources that may help you.
+For example, in the \texttt{randu} dataset, how many \texttt{y} variables are greater than 0.5? 0.6?
 
-Note: There are websites mentioned in this chapter that will help you solve errors in your code, and these solutions typically include the corrected code. You SHOULD NOT copy and paste code from the internet, rather you should learn how to fix your error and do the coding yourself. This is especially important because you will not be able to access internet resources during tests and quizzes in this course.
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(randu}\SpecialCharTok{$}\NormalTok{y[randu}\SpecialCharTok{$}\NormalTok{y}\SpecialCharTok{\textgreater{}}\FloatTok{0.5}\NormalTok{])}
+\CommentTok{\#\textgreater{} [1] 191}
+\NormalTok{new.randu }\OtherTok{\textless{}{-}}\NormalTok{ randu}\SpecialCharTok{$}\NormalTok{y[randu}\SpecialCharTok{$}\NormalTok{y}\SpecialCharTok{\textgreater{}}\FloatTok{0.6}\NormalTok{]}
+\FunctionTok{head}\NormalTok{(new.randu)}
+\CommentTok{\#\textgreater{} [1] 0.873416 0.648545 0.826873 0.926590 0.741526 0.846041}
+\FunctionTok{length}\NormalTok{(new.randu)}
+\CommentTok{\#\textgreater{} [1] 161}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{troubleshooting-typical-errors}{%
-\section{Troubleshooting Typical Errors}\label{troubleshooting-typical-errors}}
+In the \texttt{randu} dataset, how many \texttt{z} variables are greater than 0.9? Less than 0.1? Greater than 0.9 or less than 0.1?
 
-This will not be a list of common errors you will face because there are hundreds, if not thousands, that could possibly occur. However, this section will tell you how to logically work through an error.
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(randu}\SpecialCharTok{$}\NormalTok{z[randu}\SpecialCharTok{$}\NormalTok{z}\SpecialCharTok{\textgreater{}}\FloatTok{0.9}\NormalTok{])}
+\CommentTok{\#\textgreater{} [1] 29}
+\FunctionTok{length}\NormalTok{(randu}\SpecialCharTok{$}\NormalTok{z[randu}\SpecialCharTok{$}\NormalTok{z}\SpecialCharTok{\textless{}}\FloatTok{0.1}\NormalTok{])}
+\CommentTok{\#\textgreater{} [1] 37}
+\end{Highlighting}
+\end{Shaded}
 
-Start by looking for a line number. Sometimes your error will include a line where the error is occurring, if it does you should go to that line and see if you can visually assess the problem. If it does not include a line number look for key words such as object names, functions, or anything else that may give you a hint as to where the error may be happening.
+\hypertarget{r-packages}{%
+\section{R packages}\label{r-packages}}
 
-Once you find the error, it is helpful if you have done similar work in a previous assignment because you can compare the code and see if it was simply an error with how you constructed a function. Also look for grammatical errors, capitalization errors, or even something small with punctuation like putting a comma instead of a period.
+\begin{quote}
+From Wikipedia, the free encyclopedia, and fount of all knowledge
+\end{quote}
 
-If none of the above issues are present read through the error message in your console for hints. There is often ``fluff'' in error messages that is not very intuitive. Here is an example:
+R packages are extensions to the R statistical programming language. R packages contain code, data, and documentation in a standardised collection format that can be installed by users of R, typically via a centralised software repository such as CRAN (the Comprehensive R Archive Network).
 
-It can be overwhelming at times when you get an error like this, especially if it is one you have never seen before. However, if you carefully read through you see it says ``x and y lengths differ'' All of those words just to say that wherever that error is located, the x and y axis are different lengths and therefor it will not run. So, when you face something like this, you just have to walk through it one word or line at a time and see if you can make sense of it.
+The large number of packages available for R, and the ease of installing and using them, has been cited as a major factor in driving the widespread adoption of the language in data science.
 
-If nothing said up to this point has helped, do not fear. The resources listed below will help a ton! Take the time to explore the following websites BEFORE you encounter an error. Make accounts on all of them and save the home page to your favorites bar. It is almost guaranteed that you will need to visit at least one of these sites during the semester. They are links, so if you are viewing this electronically, simply click to navigate. Otherwise, copy and paste the resouce to Google and it will be the first link to show.
+\hypertarget{you-can-install-the-latest-released-version-from-cran-with}{%
+\section{You can install the latest released version from CRAN with:}\label{you-can-install-the-latest-released-version-from-cran-with}}
+
+\texttt{install.packages("dplyr")}
+
+\hypertarget{in-rstudio}{%
+\section{In RStudio}\label{in-rstudio}}
+
+Installing Packages
 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://stackoverflow.com/}{StackOverflow}
+  Open RStudio. \ldots{}
 \item
-  \href{https://github.com/}{GitHub}
+  In the lower-right pane of RStudio, select the Packages tab and the Install button.
 \item
-  \href{https://community.rstudio.com/}{RStudio Community}
+  Type the name of the packages to be installed in the ``Packages (separate multiple packages with a space or comma):'' box. \ldots{}
 \item
-  \href{https://journal.r-project.org/}{R-Project Journal}
+  Press Install .
 \end{itemize}
+
+\hypertarget{check-this-out}{%
+\section{Check this out}\label{check-this-out}}
+
+\href{https://dplyr.tidyverse.org/}{dplyr link}
+
+\url{https://dplyr.tidyverse.org/}
 
 \hypertarget{practice-final-exam}{%
 \chapter{Practice Final Exam}\label{practice-final-exam}}
@@ -2816,8 +2849,8 @@ Bonus: What is a topic that you find confusing at this point in class?
 \hypertarget{dplyr}{%
 \chapter{DPLYR}\label{dplyr}}
 
-\hypertarget{introduction-4}{%
-\section{Introduction}\label{introduction-4}}
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 For more help \textbf{PLEASE} check out \href{https://dplyr.tidyverse.org/articles/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
 
@@ -3097,16 +3130,16 @@ All of the \texttt{dplyr} functions take a data frame (or tibble) as the first a
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1     1124           1125        {-}1}
-\CommentTok{\#\textgreater{}  2  2013     1     1      931            930         1}
-\CommentTok{\#\textgreater{}  3  2013     1     1     1531           1520        11}
-\CommentTok{\#\textgreater{}  4  2013     1     2      554            600        {-}6}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1818           1815         3}
-\CommentTok{\#\textgreater{}  6  2013     1     2     2313           2125       108}
-\CommentTok{\#\textgreater{}  7  2013     1     3     1650           1635        15}
-\CommentTok{\#\textgreater{}  8  2013     1     3      728            730        {-}2}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1153           1200        {-}7}
-\CommentTok{\#\textgreater{} 10  2013     1     4      945            955       {-}10}
+\CommentTok{\#\textgreater{}  1  2013     1     1     2058           2100        {-}2}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1631           1635        {-}4}
+\CommentTok{\#\textgreater{}  3  2013     1     1      754            755        {-}1}
+\CommentTok{\#\textgreater{}  4  2013     1     2     2337           2155       102}
+\CommentTok{\#\textgreater{}  5  2013     1     2      826            830        {-}4}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1236           1238        {-}2}
+\CommentTok{\#\textgreater{}  7  2013     1     3      831            835        {-}4}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1659           1700        {-}1}
+\CommentTok{\#\textgreater{}  9  2013     1     3     2211           2045        86}
+\CommentTok{\#\textgreater{} 10  2013     1     4      818            822        {-}4}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
@@ -3781,8 +3814,8 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \hypertarget{more-dplyr}{%
 \chapter{More DPLYR}\label{more-dplyr}}
 
-\hypertarget{introduction-5}{%
-\section{Introduction}\label{introduction-5}}
+\hypertarget{introduction-4}{%
+\section{Introduction}\label{introduction-4}}
 
 For more help \textbf{PLEASE} check out \href{https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
 
@@ -3999,6 +4032,43 @@ Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answ
 \item
   What is the tallest individual for each eye color?
 \end{enumerate}
+
+\hypertarget{dealing-with-errors}{%
+\chapter{Dealing with Errors}\label{dealing-with-errors}}
+
+\hypertarget{introduction-5}{%
+\section{Introduction}\label{introduction-5}}
+
+So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and\ldots you get an error. Fortunately for you, you are not alone in this struggle, everyone battles with errors because unlike R, we are not experts at code syntax and we make mistakes. This short chapter will walk you through some techniques to help solve errors on your own and also provide some resources that may help you.
+
+Note: There are websites mentioned in this chapter that will help you solve errors in your code, and these solutions typically include the corrected code. You SHOULD NOT copy and paste code from the internet, rather you should learn how to fix your error and do the coding yourself. This is especially important because you will not be able to access internet resources during tests and quizzes in this course.
+
+\hypertarget{troubleshooting-typical-errors}{%
+\section{Troubleshooting Typical Errors}\label{troubleshooting-typical-errors}}
+
+This will not be a list of common errors you will face because there are hundreds, if not thousands, that could possibly occur. However, this section will tell you how to logically work through an error.
+
+Start by looking for a line number. Sometimes your error will include a line where the error is occurring, if it does you should go to that line and see if you can visually assess the problem. If it does not include a line number look for key words such as object names, functions, or anything else that may give you a hint as to where the error may be happening.
+
+Once you find the error, it is helpful if you have done similar work in a previous assignment because you can compare the code and see if it was simply an error with how you constructed a function. Also look for grammatical errors, capitalization errors, or even something small with punctuation like putting a comma instead of a period.
+
+If none of the above issues are present read through the error message in your console for hints. There is often ``fluff'' in error messages that is not very intuitive. Here is an example:
+
+It can be overwhelming at times when you get an error like this, especially if it is one you have never seen before. However, if you carefully read through you see it says ``x and y lengths differ'' All of those words just to say that wherever that error is located, the x and y axis are different lengths and therefor it will not run. So, when you face something like this, you just have to walk through it one word or line at a time and see if you can make sense of it.
+
+If nothing said up to this point has helped, do not fear. The resources listed below will help a ton! Take the time to explore the following websites BEFORE you encounter an error. Make accounts on all of them and save the home page to your favorites bar. It is almost guaranteed that you will need to visit at least one of these sites during the semester. They are links, so if you are viewing this electronically, simply click to navigate. Otherwise, copy and paste the resouce to Google and it will be the first link to show.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://stackoverflow.com/}{StackOverflow}
+\item
+  \href{https://github.com/}{GitHub}
+\item
+  \href{https://community.rstudio.com/}{RStudio Community}
+\item
+  \href{https://journal.r-project.org/}{R-Project Journal}
+\end{itemize}
 
 \hypertarget{logistic-regression}{%
 \chapter{Logistic Regression}\label{logistic-regression}}

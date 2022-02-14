@@ -57,12 +57,13 @@
 <li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
 <li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
 <li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
-<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">19</span> Dealing with Errors</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
 <li><a class="" href="practice-final-exam.html"><span class="header-section-number">20</span> Practice Final Exam</a></li>
 <li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">22</span> DPLYR</a></li>
 <li><a class="active" href="more-dplyr.html"><span class="header-section-number">23</span> More DPLYR</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">24</span> Logistic Regression</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">24</span> Dealing with Errors</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">25</span> Logistic Regression</a></li>
 </ul>
 
         <div class="book-extra">
@@ -74,9 +75,9 @@
 <h1>
 <span class="header-section-number">23</span> More DPLYR<a class="anchor" aria-label="anchor" href="#more-dplyr"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-5" class="section level2" number="23.1">
+<div id="introduction-4" class="section level2" number="23.1">
 <h2>
-<span class="header-section-number">23.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
 </h2>
 <p>For more help <strong>PLEASE</strong> check out <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html">Introduction to dplyr</a> introducing the key functionality of the dplyr package.</p>
 <blockquote>
@@ -129,10 +130,10 @@ Groups of rows:</li>
 <h2>
 <span class="header-section-number">23.4</span> Loading <code>dplyr</code> and the <code>starwars</code> dataset<a class="anchor" aria-label="anchor" href="#loading-dplyr-and-the-starwars-dataset"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># You should already have done this but you'll need it</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"dplyr"</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 
 <span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -183,7 +184,7 @@ Groups of rows:</li>
 <li>What is the tallest individual for each eye color?</li>
 </ol>
 <p>#Comprehensive DPLYR Practice</p>
-<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"nycflights13"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="nycflights13-excercises" class="section level2" number="23.6">
@@ -237,12 +238,12 @@ Groups of rows:</li>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="dplyr.html"><span class="header-section-number">22</span> DPLYR</a></div>
-<div class="next"><a href="logistic-regression.html"><span class="header-section-number">24</span> Logistic Regression</a></div>
+<div class="next"><a href="dealing-with-errors.html"><span class="header-section-number">24</span> Dealing with Errors</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#more-dplyr"><span class="header-section-number">23</span> More DPLYR</a></li>
-<li><a class="nav-link" href="#introduction-5"><span class="header-section-number">23.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">23.1</span> Introduction</a></li>
 <li><a class="nav-link" href="#single-table-verbs-1"><span class="header-section-number">23.2</span> Single table verbs</a></li>
 <li><a class="nav-link" href="#more-with-the-pipe"><span class="header-section-number">23.3</span> More with the pipe</a></li>
 <li><a class="nav-link" href="#loading-dplyr-and-the-starwars-dataset"><span class="header-section-number">23.4</span> Loading dplyr and the starwars dataset</a></li>
@@ -267,7 +268,7 @@ Groups of rows:</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-03.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-14.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

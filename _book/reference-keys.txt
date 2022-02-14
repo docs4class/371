@@ -78,9 +78,11 @@ your-homework-is-to-watch-these-videos-which-are-posted-under-the-linear-regress
 videos-to-watch
 problems
 multivariate-regression
-dealing-with-errors
-introduction-3
-troubleshooting-typical-errors
+filters-and-packages
+r-packages
+you-can-install-the-latest-released-version-from-cran-with
+in-rstudio
+check-this-out
 practice-final-exam
 meter-freestyle-olympic-winning-time-seconds
 starwars-fun
@@ -89,7 +91,7 @@ quiz-one-linear-regression
 quiz-two
 quiz-three
 dplyr
-introduction-4
+introduction-3
 single-table-verbs
 the-pipe
 loading-dplyr-and-the-nycflights13-dataset
@@ -103,7 +105,7 @@ viewing-more-output-print-view
 excercies
 a-neat-resource
 more-dplyr
-introduction-5
+introduction-4
 single-table-verbs-1
 more-with-the-pipe
 loading-dplyr-and-the-starwars-dataset
@@ -111,6 +113,9 @@ starwars-excercises
 nycflights13-excercises
 storms-excercises
 starwars-excercises-1
+dealing-with-errors
+introduction-5
+troubleshooting-typical-errors
 logistic-regression
 introduction-6
 training-data-and-test-data
