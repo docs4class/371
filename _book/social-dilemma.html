@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 24 Dealing with Errors | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 26 Social Dilemma | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="24.1 Introduction So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and…you get an...">
+<meta name="description" content="26.1 Your assignment Fine People: Please recall that for class on Monday February 21, 2022 you were to have watched the movie The Social Dilemma which you can find on Netflix. Afterwards you were...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 24 Dealing with Errors | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 26 Social Dilemma | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="24.1 Introduction So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and…you get an...">
+<meta property="og:description" content="26.1 Your assignment Fine People: Please recall that for class on Monday February 21, 2022 you were to have watched the movie The Social Dilemma which you can find on Netflix. Afterwards you were...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 24 Dealing with Errors | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="24.1 Introduction So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and…you get an...">
+<meta name="twitter:title" content="Chapter 26 Social Dilemma | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="26.1 Your assignment Fine People: Please recall that for class on Monday February 21, 2022 you were to have watched the movie The Social Dilemma which you can find on Netflix. Afterwards you were...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -62,9 +62,9 @@
 <li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">21</span> Data Analytics I Quizzes</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">22</span> DPLYR</a></li>
 <li><a class="" href="more-dplyr.html"><span class="header-section-number">23</span> More DPLYR</a></li>
-<li><a class="active" href="dealing-with-errors.html"><span class="header-section-number">24</span> Dealing with Errors</a></li>
+<li><a class="" href="dealing-with-errors.html"><span class="header-section-number">24</span> Dealing with Errors</a></li>
 <li><a class="" href="logistic-regression.html"><span class="header-section-number">25</span> Logistic Regression</a></li>
-<li><a class="" href="social-dilemma.html"><span class="header-section-number">26</span> Social Dilemma</a></li>
+<li><a class="active" href="social-dilemma.html"><span class="header-section-number">26</span> Social Dilemma</a></li>
 </ul>
 
         <div class="book-extra">
@@ -72,50 +72,70 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dealing-with-errors" class="section level1" number="24">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="social-dilemma" class="section level1" number="26">
 <h1>
-<span class="header-section-number">24</span> Dealing with Errors<a class="anchor" aria-label="anchor" href="#dealing-with-errors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">26</span> Social Dilemma<a class="anchor" aria-label="anchor" href="#social-dilemma"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-5" class="section level2" number="24.1">
+<div id="your-assignment" class="section level2" number="26.1">
 <h2>
-<span class="header-section-number">24.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">26.1</span> Your assignment<a class="anchor" aria-label="anchor" href="#your-assignment"><i class="fas fa-link"></i></a>
 </h2>
-<p>So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and…you get an error. Fortunately for you, you are not alone in this struggle, everyone battles with errors because unlike R, we are not experts at code syntax and we make mistakes. This short chapter will walk you through some techniques to help solve errors on your own and also provide some resources that may help you.</p>
-<p>Note: There are websites mentioned in this chapter that will help you solve errors in your code, and these solutions typically include the corrected code. You SHOULD NOT copy and paste code from the internet, rather you should learn how to fix your error and do the coding yourself. This is especially important because you will not be able to access internet resources during tests and quizzes in this course.</p>
-</div>
-<div id="troubleshooting-typical-errors" class="section level2" number="24.2">
-<h2>
-<span class="header-section-number">24.2</span> Troubleshooting Typical Errors<a class="anchor" aria-label="anchor" href="#troubleshooting-typical-errors"><i class="fas fa-link"></i></a>
-</h2>
-<p>This will not be a list of common errors you will face because there are hundreds, if not thousands, that could possibly occur. However, this section will tell you how to logically work through an error.</p>
-<p>Start by looking for a line number. Sometimes your error will include a line where the error is occurring, if it does you should go to that line and see if you can visually assess the problem. If it does not include a line number look for key words such as object names, functions, or anything else that may give you a hint as to where the error may be happening.</p>
-<p>Once you find the error, it is helpful if you have done similar work in a previous assignment because you can compare the code and see if it was simply an error with how you constructed a function. Also look for grammatical errors, capitalization errors, or even something small with punctuation like putting a comma instead of a period.</p>
-<p>If none of the above issues are present read through the error message in your console for hints. There is often “fluff” in error messages that is not very intuitive. Here is an example:</p>
-<p>It can be overwhelming at times when you get an error like this, especially if it is one you have never seen before. However, if you carefully read through you see it says “x and y lengths differ” All of those words just to say that wherever that error is located, the x and y axis are different lengths and therefor it will not run. So, when you face something like this, you just have to walk through it one word or line at a time and see if you can make sense of it.</p>
-<p>If nothing said up to this point has helped, do not fear. The resources listed below will help a ton! Take the time to explore the following websites BEFORE you encounter an error. Make accounts on all of them and save the home page to your favorites bar. It is almost guaranteed that you will need to visit at least one of these sites during the semester. They are links, so if you are viewing this electronically, simply click to navigate. Otherwise, copy and paste the resouce to Google and it will be the first link to show.</p>
+<p>Fine People:</p>
+<p>Please recall that for class on <strong>Monday February 21, 2022</strong> you were to have watched the movie The Social Dilemma which you can find on Netflix. Afterwards you were to have Googled Facebook – what news is going on with them ethically right now?</p>
+<p>Please have a one to two SINGLE SPACED page paper to turn in answering some/all of these questions:</p>
 <ul>
-<li><a href="https://stackoverflow.com/">StackOverflow</a></li>
-<li><a href="https://github.com/">GitHub</a></li>
-<li><a href="https://community.rstudio.com/">RStudio Community</a></li>
-<li><a href="https://journal.r-project.org/">R-Project Journal</a></li>
+<li>Do you believe that social media addiction is real? What can you do to help prevent an addiction to social media?</li>
+<li>Do social media companies have a responsibility for how their platforms impact people? Society?</li>
+<li>Why do you use social media? Is that the only way for you to achieve those things?</li>
+<li>After watching the film, do you plan to change any of your privacy settings on social media? Which ones, and why or why not?</li>
+<li>Have you ever seen an ad for something you had only talked or thought about? How did it make you feel?</li>
+<li>What is one part of the film that really resonates with you? Connect it to a personal experience.</li>
+<li>Do you fact check everything you see online? What is one time you have read only the title or beginning of an article, but shared it anyway?</li>
+<li>What sources do you trust for news? Why do you trust these sources and do you ever get information from elsewhere?</li>
+<li>Can you think of a time where you said or did something online that you probably wouldn’t do in person?</li>
+<li>Think of a time where you have seen hate comments on a celebrity’s social media post. How does being behind a screen change how a person sees people on the other side?</li>
 </ul>
+</div>
+<div id="some-parts-that-stuck-out-to-me" class="section level2" number="26.2">
+<h2>
+<span class="header-section-number">26.2</span> Some parts that stuck out to me:<a class="anchor" aria-label="anchor" href="#some-parts-that-stuck-out-to-me"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>9:27 Thoughts that you had not intended to have because of Google Notifications</li>
+<li>13:13 If you are not paying for the product, you ARE the product.</li>
+<li>14:00 Keep you engaged in the platform.</li>
+<li>14:49 It’s the gradual slight perceptible change in your behavior and way you think 14:49</li>
+<li>22:01 Deceit is inherent in all communication (through socail media)</li>
+<li>Big ears? Are you kidding me?</li>
+<li>Ex-girlfriend? Are you STILL kidding me?</li>
+</ul>
+</div>
+<div id="need-more-info" class="section level2" number="26.3">
+<h2>
+<span class="header-section-number">26.3</span> Need more info?<a class="anchor" aria-label="anchor" href="#need-more-info"><i class="fas fa-link"></i></a>
+</h2>
+<p>Please let me know if you have any questions!</p>
+<p>Appreciatively,
+TT</p>
+
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="more-dplyr.html"><span class="header-section-number">23</span> More DPLYR</a></div>
-<div class="next"><a href="logistic-regression.html"><span class="header-section-number">25</span> Logistic Regression</a></div>
+<div class="prev"><a href="logistic-regression.html"><span class="header-section-number">25</span> Logistic Regression</a></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#dealing-with-errors"><span class="header-section-number">24</span> Dealing with Errors</a></li>
-<li><a class="nav-link" href="#introduction-5"><span class="header-section-number">24.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#troubleshooting-typical-errors"><span class="header-section-number">24.2</span> Troubleshooting Typical Errors</a></li>
+<li><a class="nav-link" href="#social-dilemma"><span class="header-section-number">26</span> Social Dilemma</a></li>
+<li><a class="nav-link" href="#your-assignment"><span class="header-section-number">26.1</span> Your assignment</a></li>
+<li><a class="nav-link" href="#some-parts-that-stuck-out-to-me"><span class="header-section-number">26.2</span> Some parts that stuck out to me:</a></li>
+<li><a class="nav-link" href="#need-more-info"><span class="header-section-number">26.3</span> Need more info?</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/37-errors.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/37-errors.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/47-social_dilemma.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/47-social_dilemma.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

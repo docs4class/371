@@ -122,3 +122,7 @@ training-data-and-test-data
 model-structure
 model-interpretation
 review-questions-2
+social-dilemma
+your-assignment
+some-parts-that-stuck-out-to-me
+need-more-info
