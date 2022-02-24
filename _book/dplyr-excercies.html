@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Our Class Rhythm | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 27 DPLYR Excercies | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="Monday: Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life. Wednesday: Work more examples. Chat as needed....">
+<meta name="description" content="Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers. How many flights in Sept were late departing...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 3 Our Class Rhythm | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 27 DPLYR Excercies | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Monday: Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life. Wednesday: Work more examples. Chat as needed....">
+<meta property="og:description" content="Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers. How many flights in Sept were late departing...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 3 Our Class Rhythm | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="Monday: Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life. Wednesday: Work more examples. Chat as needed....">
+<meta name="twitter:title" content="Chapter 27 DPLYR Excercies | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers. How many flights in Sept were late departing...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -41,7 +41,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
 <li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
-<li><a class="active" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
 <li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
 <li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
 <li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
@@ -65,7 +65,7 @@
 <li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
 <li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
 <li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
-<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+<li><a class="active" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
 <li><a class="" href="dealing-with-errors.html"><span class="header-section-number">28</span> Dealing with Errors</a></li>
 <li><a class="" href="logistic-regression.html"><span class="header-section-number">29</span> Logistic Regression</a></li>
 <li><a class="" href="data-analytics-i-quizzes.html"><span class="header-section-number">30</span> Data Analytics I Quizzes</a></li>
@@ -78,27 +78,35 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="our-class-rhythm" class="section level1" number="3">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr-excercies" class="section level1" number="27">
 <h1>
-<span class="header-section-number">3</span> Our Class Rhythm<a class="anchor" aria-label="anchor" href="#our-class-rhythm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">27</span> DPLYR Excercies<a class="anchor" aria-label="anchor" href="#dplyr-excercies"><i class="fas fa-link"></i></a>
 </h1>
-<div class="rmdimportant">
-<p><strong>Monday:</strong> Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life.</p>
-<p><strong>Wednesday:</strong> Work more examples. Chat as needed. <strong>Live our best lives. :)</strong>.</p>
-<p><strong>Friday:</strong> Apply what we’ve learned – demonstrate your mastery (typically in the form of a quiz, lab, or assignment). Rinse. Repeat.</p>
-</div>
+<p>Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers.</p>
+<ol style="list-style-type: decimal">
+<li>How many flights in Sept were late departing flights? [7815]</li>
+<li>How many flights in Sept were late departing flights that originated at JFK airport? [2649]</li>
+<li>How many flights in Sept were late departing flights with an origin of JFK airport and had an destination of anywhere except MIA? [2572]</li>
+<li>Which carrier had the most flights in this data set? [UA with 58665]</li>
+<li>Which destination had the most flights in this data set? [ORD with 17283]</li>
+<li>Which destination had the most flights with departure delays of greater than 60 minutes in this data set? [ORD with 1480]</li>
+<li>What was the longest arrival delay in this dataset? [1272]</li>
+<li>Which carrier in September had the most late departing flights? [UA with 1559]</li>
+<li>Create a variable called total.annoyance which arrival delay plus the departure delay for each flight.</li>
+<li>Which carrier with more than 10 flights in September had greatest % late departing flights?</li>
+</ol>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></div>
-<div class="next"><a href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></div>
+<div class="prev"><a href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></div>
+<div class="next"><a href="dealing-with-errors.html"><span class="header-section-number">28</span> Dealing with Errors</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#our-class-rhythm"><span class="header-section-number">3</span> Our Class Rhythm</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#dplyr-excercies"><span class="header-section-number">27</span> DPLYR Excercies</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/03-syllabus.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/03-syllabus.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/30-dplyr.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/30-dplyr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

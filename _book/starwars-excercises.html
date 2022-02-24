@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Our Class Rhythm | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 21 starwars Excercises | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="Monday: Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life. Wednesday: Work more examples. Chat as needed....">
+<meta name="description" content="Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm? How many characters are...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 3 Our Class Rhythm | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 21 starwars Excercises | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Monday: Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life. Wednesday: Work more examples. Chat as needed....">
+<meta property="og:description" content="Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm? How many characters are...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 3 Our Class Rhythm | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="Monday: Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life. Wednesday: Work more examples. Chat as needed....">
+<meta name="twitter:title" content="Chapter 21 starwars Excercises | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm? How many characters are...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -41,7 +41,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
 <li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
-<li><a class="active" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
 <li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
 <li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
 <li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
@@ -59,7 +59,7 @@
 <li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
 <li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
-<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="active" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
 <li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
 <li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
 <li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
@@ -78,27 +78,38 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="our-class-rhythm" class="section level1" number="3">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="starwars-excercises" class="section level1" number="21">
 <h1>
-<span class="header-section-number">3</span> Our Class Rhythm<a class="anchor" aria-label="anchor" href="#our-class-rhythm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21</span> <code>starwars</code> Excercises<a class="anchor" aria-label="anchor" href="#starwars-excercises"><i class="fas fa-link"></i></a>
 </h1>
-<div class="rmdimportant">
-<p><strong>Monday:</strong> Wrap up previous topic and introduce what you’ve pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life.</p>
-<p><strong>Wednesday:</strong> Work more examples. Chat as needed. <strong>Live our best lives. :)</strong>.</p>
-<p><strong>Friday:</strong> Apply what we’ve learned – demonstrate your mastery (typically in the form of a quiz, lab, or assignment). Rinse. Repeat.</p>
-</div>
+<p>Please use the <code>starwars</code> dataset from the <code>dplyr</code> package to answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>How may humans are in this dataset?</li>
+<li>How many characters are taller than 89 cm?</li>
+<li>How many characters are taller than 37 inches?</li>
+<li>How many characters are taller than 37 inches and weigh more than 55 pounds?</li>
+<li>How many characters are not human or droid?</li>
+<li>How many characters are not human or droid and are taller than 47 inches?</li>
+<li>Which species has the most individuals included in this data set?</li>
+<li>Which species has the tallest individuals on average?</li>
+<li>What is the tallest individual for each species?</li>
+<li>Calculate the BMI for each individual and determine which individual has the highest BMI. Use the formula <code>bmi = mass/((height/100)^2)</code> to calculate bmi.</li>
+<li>Which homeworld has the most individuals included in this data set?</li>
+<li>Which homeworld has the tallest individuals on average?</li>
+<li>What is the tallest individual for each eye color?</li>
+</ol>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></div>
-<div class="next"><a href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></div>
+<div class="prev"><a href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></div>
+<div class="next"><a href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#our-class-rhythm"><span class="header-section-number">3</span> Our Class Rhythm</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#starwars-excercises"><span class="header-section-number">21</span> starwars Excercises</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/03-syllabus.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/03-syllabus.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/30-dplyr.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/30-dplyr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
