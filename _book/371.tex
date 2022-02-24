@@ -668,7 +668,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Thu Feb 24 11:00:43 2022"}
+\CommentTok{\#\textgreater{} [1] "Thu Feb 24 11:14:24 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2549,12 +2549,14 @@ Installing Packages
 \url{https://dplyr.tidyverse.org/}
 
 \hypertarget{dplyr}{%
-\chapter{DPLYR}\label{dplyr}}
+\chapter{dplyr}\label{dplyr}}
 
 \hypertarget{introduction-3}{%
 \section{Introduction}\label{introduction-3}}
 
 For more help \textbf{PLEASE} check out \href{https://dplyr.tidyverse.org/articles/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
+
+\url{https://dplyr.tidyverse.org/articles/dplyr.html}
 
 \begin{quote}
 Your life is about to change. For the better, even.
@@ -2605,14 +2607,14 @@ Columns:
 \hypertarget{the-pipe}{%
 \section{The pipe}\label{the-pipe}}
 
-All of the \texttt{dplyr} functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the \texttt{\%\textgreater{}\%} operator from magrittr. x \%\textgreater\% f(y) turns into f(x, y) so the result from one step is then ``piped'' into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as ``then'').
+All of the \texttt{dplyr} functions take a data frame (or tibble) as the first argument. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as ``then'').
 
 \begin{quote}
 What is this: \texttt{\%\textgreater{}\%}?
 \end{quote}
 
-\hypertarget{loading-dplyr-and-the-starwars-dataset}{%
-\section{\texorpdfstring{Loading \texttt{dplyr} and the \texttt{starwars} dataset}{Loading dplyr and the starwars dataset}}\label{loading-dplyr-and-the-starwars-dataset}}
+\hypertarget{loading-dplyr}{%
+\section{\texorpdfstring{Loading \texttt{dplyr}}{Loading dplyr}}\label{loading-dplyr}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2620,6 +2622,9 @@ What is this: \texttt{\%\textgreater{}\%}?
 \FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\hypertarget{starwars-examples}{%
+\section{\texorpdfstring{\texttt{starwars} examples}{starwars examples}}\label{starwars-examples}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2758,8 +2763,8 @@ Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answ
   What is the tallest individual for each eye color?
 \end{enumerate}
 
-\hypertarget{loading-dplyr-and-the-nycflights13-dataset}{%
-\chapter{Loading dplyr and the nycflights13 dataset}\label{loading-dplyr-and-the-nycflights13-dataset}}
+\hypertarget{dplyr-and-nycflights13}{%
+\chapter{\texorpdfstring{\texttt{dplyr} and \texttt{nycflights13}}{dplyr and nycflights13}}\label{dplyr-and-nycflights13}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2992,16 +2997,16 @@ Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answ
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1      933            937        {-}4}
-\CommentTok{\#\textgreater{}  2  2013     1     1      712            715        {-}3}
-\CommentTok{\#\textgreater{}  3  2013     1     1      917            915         2}
-\CommentTok{\#\textgreater{}  4  2013     1     2     1603           1605        {-}2}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1845           1645       120}
-\CommentTok{\#\textgreater{}  6  2013     1     2      722            725        {-}3}
-\CommentTok{\#\textgreater{}  7  2013     1     3      655            700        {-}5}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1028           1016        12}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1250           1250         0}
-\CommentTok{\#\textgreater{} 10  2013     1     4      909            904         5}
+\CommentTok{\#\textgreater{}  1  2013     1     1     1058           1100        {-}2}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1827           1829        {-}2}
+\CommentTok{\#\textgreater{}  3  2013     1     1      931            930         1}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1451           1440        11}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1341           1320        21}
+\CommentTok{\#\textgreater{}  6  2013     1     2      925            920         5}
+\CommentTok{\#\textgreater{}  7  2013     1     3      742            745        {-}3}
+\CommentTok{\#\textgreater{}  8  2013     1     3     2119           2125        {-}6}
+\CommentTok{\#\textgreater{}  9  2013     1     3      911            900        11}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1727           1734        {-}7}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
@@ -3226,7 +3231,7 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \end{Shaded}
 
 \hypertarget{grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup}{%
-\chapter{Grouping and counting: summarise, tally, count, group\_size, n\_groups, ungroup}\label{grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup}}
+\section{Grouping and counting: summarise, tally, count, group\_size, n\_groups, ungroup}\label{grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3405,7 +3410,7 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \end{Shaded}
 
 \hypertarget{creating-data-frames-data_frame}{%
-\chapter{Creating data frames: data\_frame}\label{creating-data-frames-data_frame}}
+\section{Creating data frames: data\_frame}\label{creating-data-frames-data_frame}}
 
 \texttt{data\_frame()} is a better way than \texttt{data.frame()} for creating data frames. Benefits of \texttt{data\_frame()}:
 
@@ -3450,8 +3455,11 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{joining-tables}{%
+\chapter{Joining tables}\label{joining-tables}}
+
 \hypertarget{joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join}{%
-\chapter{Joining (merging) tables: left\_join, right\_join, inner\_join, full\_join, semi\_join, anti\_join}\label{joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join}}
+\section{Joining (merging) tables: left\_join, right\_join, inner\_join, full\_join, semi\_join, anti\_join}\label{joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3556,7 +3564,7 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \end{Shaded}
 
 \hypertarget{viewing-more-output-print-view}{%
-\chapter{Viewing more output: print, View}\label{viewing-more-output-print-view}}
+\section{Viewing more output: print, View}\label{viewing-more-output-print-view}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3666,8 +3674,8 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{dplyr-excercies}{%
-\chapter{DPLYR Excercies}\label{dplyr-excercies}}
+\hypertarget{more-dplyr-excercies}{%
+\chapter{More DPLYR Excercies}\label{more-dplyr-excercies}}
 
 Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers.
 

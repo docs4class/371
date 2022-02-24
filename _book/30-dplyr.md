@@ -1,8 +1,10 @@
-# DPLYR 
+# dplyr
 
 ## Introduction
 
 For more help **PLEASE** check out  [Introduction to dplyr](https://dplyr.tidyverse.org/articles/dplyr.html) introducing the key functionality of the dplyr package.
+
+https://dplyr.tidyverse.org/articles/dplyr.html
 
 > Your life is about to change.  For the better, even.
 
@@ -33,11 +35,11 @@ Columns:
 
 ## The pipe
 
-All of the `dplyr` functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the `%>%` operator from magrittr. x %>% f(y) turns into f(x, y) so the result from one step is then “piped” into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).
+All of the `dplyr` functions take a data frame (or tibble) as the first argument.  You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).
 
 > What is this: `%>%`?
 
-## Loading `dplyr` and the `starwars` dataset
+## Loading `dplyr` 
 
 
 ```r
@@ -48,6 +50,7 @@ install.packages("dplyr")
 
 
 
+## `starwars` examples
 
 
 ```r
@@ -169,7 +172,7 @@ Please use the `starwars` dataset from the `dplyr` package to answer the followi
 6. Which homeworld has the tallest individuals on average?
 7. What is the tallest individual for each eye color?
 
-# Loading dplyr and the nycflights13 dataset
+# `dplyr` and `nycflights13`
 
 
 ```r
@@ -396,16 +399,16 @@ flights %>% group_by(month, day) %>% sample_n(3)
 #> # Groups:   month, day [365]
 #>     year month   day dep_time sched_dep_time dep_delay
 #>    <int> <int> <int>    <int>          <int>     <dbl>
-#>  1  2013     1     1     1457           1500        -3
-#>  2  2013     1     1     2250           2255        -5
-#>  3  2013     1     1      601            600         1
-#>  4  2013     1     2       NA           1330        NA
-#>  5  2013     1     2     2009           1955        14
-#>  6  2013     1     2      958           1000        -2
-#>  7  2013     1     3      634            635        -1
-#>  8  2013     1     3     2012           1600       252
-#>  9  2013     1     3     2058           2100        -2
-#> 10  2013     1     4     1855           1900        -5
+#>  1  2013     1     1     2353           2359        -6
+#>  2  2013     1     1      659            700        -1
+#>  3  2013     1     1     2006           2000         6
+#>  4  2013     1     2     1530           1530         0
+#>  5  2013     1     2      701            705        -4
+#>  6  2013     1     2     1831           1829         2
+#>  7  2013     1     3     1855           1855         0
+#>  8  2013     1     3      901            905        -4
+#>  9  2013     1     3     1100           1100         0
+#> 10  2013     1     4      712            720        -8
 #> # ... with 1,085 more rows, and 13 more variables:
 #> #   arr_time <int>, sched_arr_time <int>, arr_delay <dbl>,
 #> #   carrier <chr>, flight <int>, tailnum <chr>,
@@ -612,7 +615,7 @@ mtcars %>% tbl_df()
 ```
 
 
-# Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup
+## Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup
 
 
 ```r
@@ -783,7 +786,7 @@ flights %>% group_by(month, day) %>% summarise(cnt = n()) %>% ungroup() %>% arra
 ```
 
 
-# Creating data frames: data_frame
+## Creating data frames: data_frame
 
 `data_frame()` is a better way than `data.frame()` for creating data frames. Benefits of `data_frame()`:
 
@@ -818,8 +821,9 @@ data.frame(a = 1:6, c = 'string', 'd+e' = 1) %>% glimpse()
 #> $ d.e <dbl> 1, 1, 1, 1, 1, 1
 ```
 
+# Joining tables
 
-# Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join
+## Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join
 
 
 ```r
@@ -923,7 +927,7 @@ inner_join(a, b, by=c("color" = "col"))
 ```
 
 
-# Viewing more output: print, View
+## Viewing more output: print, View
 
 
 ```r
@@ -1029,7 +1033,7 @@ options(dplyr.width = Inf, dplyr.print_min = 6)
 options(dplyr.width = NULL, dplyr.print_min = 10)
 ```
 
-# DPLYR Excercies
+# More DPLYR Excercies
 
 Using the nycflights13 dataset and the dplyr package, answer these questions.  Some answers are given in square brackets for you to check your answers.
 
