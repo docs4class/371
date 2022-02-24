@@ -1,8 +1,10 @@
-# DPLYR 
+# dplyr
 
 ## Introduction
 
 For more help **PLEASE** check out  [Introduction to dplyr](https://dplyr.tidyverse.org/articles/dplyr.html) introducing the key functionality of the dplyr package.
+
+https://dplyr.tidyverse.org/articles/dplyr.html
 
 > Your life is about to change.  For the better, even.
 
@@ -33,11 +35,11 @@ Columns:
 
 ## The pipe
 
-All of the `dplyr` functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the `%>%` operator from magrittr. x %>% f(y) turns into f(x, y) so the result from one step is then “piped” into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).
+All of the `dplyr` functions take a data frame (or tibble) as the first argument.  You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).
 
 > What is this: `%>%`?
 
-## Loading `dplyr` and the `starwars` dataset
+## Loading `dplyr` 
 
 ```{r eval=FALSE}
 # You should already have done this but you'll need it
@@ -50,6 +52,7 @@ install.packages("dplyr")
 suppressMessages(library(dplyr))
 ```
 
+## `starwars` examples
 
 ```{r eval=TRUE}
 library(dplyr)
@@ -102,7 +105,7 @@ Please use the `starwars` dataset from the `dplyr` package to answer the followi
 6. Which homeworld has the tallest individuals on average?
 7. What is the tallest individual for each eye color?
 
-# Loading dplyr and the nycflights13 dataset
+# `dplyr` and `nycflights13`
 
 ```{r}
 # load packages
@@ -233,7 +236,7 @@ mtcars %>% tbl_df()
 ```
 
 
-# Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup
+## Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup
 
 ```{r}
 # summarise() can be used to count the number of rows in each group
@@ -285,7 +288,7 @@ flights %>% group_by(month, day) %>% summarise(cnt = n()) %>% ungroup() %>% arra
 ```
 
 
-# Creating data frames: data_frame
+## Creating data frames: data_frame
 
 `data_frame()` is a better way than `data.frame()` for creating data frames. Benefits of `data_frame()`:
 
@@ -304,8 +307,9 @@ data_frame(a = 1:6, b = a*2, c = 'string', 'd+e' = 1) %>% glimpse()
 data.frame(a = 1:6, c = 'string', 'd+e' = 1) %>% glimpse()
 ```
 
+# Joining tables
 
-# Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join
+## Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join
 
 ```{r}
 # create two simple data frames
@@ -344,7 +348,7 @@ inner_join(a, b, by=c("color" = "col"))
 ```
 
 
-# Viewing more output: print, View
+## Viewing more output: print, View
 
 ```{r}
 # specify that you want to see more rows
@@ -372,7 +376,7 @@ options(dplyr.width = Inf, dplyr.print_min = 6)
 options(dplyr.width = NULL, dplyr.print_min = 10)
 ```
 
-# DPLYR Excercies
+# More DPLYR Excercies
 
 Using the nycflights13 dataset and the dplyr package, answer these questions.  Some answers are given in square brackets for you to check your answers.
 
