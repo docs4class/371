@@ -109,18 +109,18 @@ starwars %>%
 starwars %>% 
   arrange(desc(mass))
 #> # A tibble: 87 x 14
-#>    name       height  mass hair_color skin_color  eye_color 
-#>    <chr>       <int> <dbl> <chr>      <chr>       <chr>     
-#>  1 Jabba Des~    175  1358 <NA>       green-tan,~ orange    
-#>  2 Grievous      216   159 none       brown, whi~ green, ye~
-#>  3 IG-88         200   140 none       metal       red       
-#>  4 Darth Vad~    202   136 none       white       yellow    
-#>  5 Tarfful       234   136 brown      brown       blue      
-#>  6 Owen Lars     178   120 brown, gr~ light       blue      
-#>  7 Bossk         190   113 none       green       red       
-#>  8 Chewbacca     228   112 brown      unknown     blue      
-#>  9 Jek Tono ~    180   110 brown      fair        blue      
-#> 10 Dexter Je~    198   102 none       brown       yellow    
+#>    name         height  mass hair_color skin_color eye_color
+#>    <chr>         <int> <dbl> <chr>      <chr>      <chr>    
+#>  1 Jabba Desil~    175  1358 <NA>       green-tan~ orange   
+#>  2 Grievous        216   159 none       brown, wh~ green, y~
+#>  3 IG-88           200   140 none       metal      red      
+#>  4 Darth Vader     202   136 none       white      yellow   
+#>  5 Tarfful         234   136 brown      brown      blue     
+#>  6 Owen Lars       178   120 brown, gr~ light      blue     
+#>  7 Bossk           190   113 none       green      red      
+#>  8 Chewbacca       228   112 brown      unknown    blue     
+#>  9 Jek Tono Po~    180   110 brown      fair       blue     
+#> 10 Dexter Jett~    198   102 none       brown      yellow   
 #> # ... with 77 more rows, and 8 more variables:
 #> #   birth_year <dbl>, sex <chr>, gender <chr>,
 #> #   homeworld <chr>, species <chr>, films <list>,
@@ -396,16 +396,16 @@ flights %>% group_by(month, day) %>% sample_n(3)
 #> # Groups:   month, day [365]
 #>     year month   day dep_time sched_dep_time dep_delay
 #>    <int> <int> <int>    <int>          <int>     <dbl>
-#>  1  2013     1     1      637            645        -8
-#>  2  2013     1     1      711            715        -4
-#>  3  2013     1     1      554            600        -6
-#>  4  2013     1     2      958           1000        -2
-#>  5  2013     1     2     1430           1430         0
-#>  6  2013     1     2     1356           1359        -3
-#>  7  2013     1     3      904            900         4
-#>  8  2013     1     3     2240           2159        41
-#>  9  2013     1     3     2046           2040         6
-#> 10  2013     1     4     1028           1030        -2
+#>  1  2013     1     1     1457           1500        -3
+#>  2  2013     1     1     2250           2255        -5
+#>  3  2013     1     1      601            600         1
+#>  4  2013     1     2       NA           1330        NA
+#>  5  2013     1     2     2009           1955        14
+#>  6  2013     1     2      958           1000        -2
+#>  7  2013     1     3      634            635        -1
+#>  8  2013     1     3     2012           1600       252
+#>  9  2013     1     3     2058           2100        -2
+#> 10  2013     1     4     1855           1900        -5
 #> # ... with 1,085 more rows, and 13 more variables:
 #> #   arr_time <int>, sched_arr_time <int>, arr_delay <dbl>,
 #> #   carrier <chr>, flight <int>, tailnum <chr>,
@@ -714,7 +714,8 @@ flights %>% group_by(month) %>% n_groups()
 ```r
 # group by two variables, summarise, arrange (output is possibly confusing)
 flights %>% group_by(month, day) %>% summarise(cnt = n()) %>% arrange(desc(cnt)) %>% print(n = 40)
-#> `summarise()` has grouped output by 'month'. You can override using the `.groups` argument.
+#> `summarise()` has grouped output by 'month'. You can
+#> override using the `.groups` argument.
 #> # A tibble: 365 x 3
 #> # Groups:   month [12]
 #>    month   day   cnt
@@ -763,7 +764,8 @@ flights %>% group_by(month, day) %>% summarise(cnt = n()) %>% arrange(desc(cnt))
 
 # ungroup() before arranging to arrange across all groups
 flights %>% group_by(month, day) %>% summarise(cnt = n()) %>% ungroup() %>% arrange(desc(cnt))
-#> `summarise()` has grouped output by 'month'. You can override using the `.groups` argument.
+#> `summarise()` has grouped output by 'month'. You can
+#> override using the `.groups` argument.
 #> # A tibble: 365 x 3
 #>    month   day   cnt
 #>    <int> <int> <int>

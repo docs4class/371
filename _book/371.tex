@@ -668,7 +668,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Thu Feb 24 09:28:41 2022"}
+\CommentTok{\#\textgreater{} [1] "Thu Feb 24 11:00:43 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2681,18 +2681,18 @@ What is this: \texttt{\%\textgreater{}\%}?
 \NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mass))}
 \CommentTok{\#\textgreater{} \# A tibble: 87 x 14}
-\CommentTok{\#\textgreater{}    name       height  mass hair\_color skin\_color  eye\_color }
-\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}       \textless{}int\textgreater{} \textless{}dbl\textgreater{} \textless{}chr\textgreater{}      \textless{}chr\textgreater{}       \textless{}chr\textgreater{}     }
-\CommentTok{\#\textgreater{}  1 Jabba Des\textasciitilde{}    175  1358 \textless{}NA\textgreater{}       green{-}tan,\textasciitilde{} orange    }
-\CommentTok{\#\textgreater{}  2 Grievous      216   159 none       brown, whi\textasciitilde{} green, ye\textasciitilde{}}
-\CommentTok{\#\textgreater{}  3 IG{-}88         200   140 none       metal       red       }
-\CommentTok{\#\textgreater{}  4 Darth Vad\textasciitilde{}    202   136 none       white       yellow    }
-\CommentTok{\#\textgreater{}  5 Tarfful       234   136 brown      brown       blue      }
-\CommentTok{\#\textgreater{}  6 Owen Lars     178   120 brown, gr\textasciitilde{} light       blue      }
-\CommentTok{\#\textgreater{}  7 Bossk         190   113 none       green       red       }
-\CommentTok{\#\textgreater{}  8 Chewbacca     228   112 brown      unknown     blue      }
-\CommentTok{\#\textgreater{}  9 Jek Tono \textasciitilde{}    180   110 brown      fair        blue      }
-\CommentTok{\#\textgreater{} 10 Dexter Je\textasciitilde{}    198   102 none       brown       yellow    }
+\CommentTok{\#\textgreater{}    name         height  mass hair\_color skin\_color eye\_color}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}         \textless{}int\textgreater{} \textless{}dbl\textgreater{} \textless{}chr\textgreater{}      \textless{}chr\textgreater{}      \textless{}chr\textgreater{}    }
+\CommentTok{\#\textgreater{}  1 Jabba Desil\textasciitilde{}    175  1358 \textless{}NA\textgreater{}       green{-}tan\textasciitilde{} orange   }
+\CommentTok{\#\textgreater{}  2 Grievous        216   159 none       brown, wh\textasciitilde{} green, y\textasciitilde{}}
+\CommentTok{\#\textgreater{}  3 IG{-}88           200   140 none       metal      red      }
+\CommentTok{\#\textgreater{}  4 Darth Vader     202   136 none       white      yellow   }
+\CommentTok{\#\textgreater{}  5 Tarfful         234   136 brown      brown      blue     }
+\CommentTok{\#\textgreater{}  6 Owen Lars       178   120 brown, gr\textasciitilde{} light      blue     }
+\CommentTok{\#\textgreater{}  7 Bossk           190   113 none       green      red      }
+\CommentTok{\#\textgreater{}  8 Chewbacca       228   112 brown      unknown    blue     }
+\CommentTok{\#\textgreater{}  9 Jek Tono Po\textasciitilde{}    180   110 brown      fair       blue     }
+\CommentTok{\#\textgreater{} 10 Dexter Jett\textasciitilde{}    198   102 none       brown      yellow   }
 \CommentTok{\#\textgreater{} \# ... with 77 more rows, and 8 more variables:}
 \CommentTok{\#\textgreater{} \#   birth\_year \textless{}dbl\textgreater{}, sex \textless{}chr\textgreater{}, gender \textless{}chr\textgreater{},}
 \CommentTok{\#\textgreater{} \#   homeworld \textless{}chr\textgreater{}, species \textless{}chr\textgreater{}, films \textless{}list\textgreater{},}
@@ -2992,16 +2992,16 @@ Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answ
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1     1155           1200        {-}5}
-\CommentTok{\#\textgreater{}  2  2013     1     1      709            700         9}
-\CommentTok{\#\textgreater{}  3  2013     1     1      950            954        {-}4}
-\CommentTok{\#\textgreater{}  4  2013     1     2     1126           1125         1}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1655           1655         0}
-\CommentTok{\#\textgreater{}  6  2013     1     2     1255           1259        {-}4}
-\CommentTok{\#\textgreater{}  7  2013     1     3     1254           1259        {-}5}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1805           1727        38}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1755           1745        10}
-\CommentTok{\#\textgreater{} 10  2013     1     4     1856           1859        {-}3}
+\CommentTok{\#\textgreater{}  1  2013     1     1      933            937        {-}4}
+\CommentTok{\#\textgreater{}  2  2013     1     1      712            715        {-}3}
+\CommentTok{\#\textgreater{}  3  2013     1     1      917            915         2}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1603           1605        {-}2}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1845           1645       120}
+\CommentTok{\#\textgreater{}  6  2013     1     2      722            725        {-}3}
+\CommentTok{\#\textgreater{}  7  2013     1     3      655            700        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1028           1016        12}
+\CommentTok{\#\textgreater{}  9  2013     1     3     1250           1250         0}
+\CommentTok{\#\textgreater{} 10  2013     1     4      909            904         5}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
@@ -3335,7 +3335,8 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 \begin{Highlighting}[]
 \CommentTok{\# group by two variables, summarise, arrange (output is possibly confusing)}
 \NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{cnt =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(cnt)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{print}\NormalTok{(}\AttributeTok{n =} \DecValTok{40}\NormalTok{)}
-\CommentTok{\#\textgreater{} \textasciigrave{}summarise()\textasciigrave{} has grouped output by \textquotesingle{}month\textquotesingle{}. You can override using the \textasciigrave{}.groups\textasciigrave{} argument.}
+\CommentTok{\#\textgreater{} \textasciigrave{}summarise()\textasciigrave{} has grouped output by \textquotesingle{}month\textquotesingle{}. You can}
+\CommentTok{\#\textgreater{} override using the \textasciigrave{}.groups\textasciigrave{} argument.}
 \CommentTok{\#\textgreater{} \# A tibble: 365 x 3}
 \CommentTok{\#\textgreater{} \# Groups:   month [12]}
 \CommentTok{\#\textgreater{}    month   day   cnt}
@@ -3384,7 +3385,8 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
 
 \CommentTok{\# ungroup() before arranging to arrange across all groups}
 \NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{cnt =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(cnt))}
-\CommentTok{\#\textgreater{} \textasciigrave{}summarise()\textasciigrave{} has grouped output by \textquotesingle{}month\textquotesingle{}. You can override using the \textasciigrave{}.groups\textasciigrave{} argument.}
+\CommentTok{\#\textgreater{} \textasciigrave{}summarise()\textasciigrave{} has grouped output by \textquotesingle{}month\textquotesingle{}. You can}
+\CommentTok{\#\textgreater{} override using the \textasciigrave{}.groups\textasciigrave{} argument.}
 \CommentTok{\#\textgreater{} \# A tibble: 365 x 3}
 \CommentTok{\#\textgreater{}    month   day   cnt}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}}
