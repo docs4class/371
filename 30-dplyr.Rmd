@@ -85,9 +85,9 @@ starwars %>%
   )
 ```
 
+# Practice
 
-
-# `starwars` Excercises
+## `starwars` Excercises
 
 Please use the `starwars` dataset from the `dplyr` package to answer the following questions:
 
@@ -104,6 +104,43 @@ Please use the `starwars` dataset from the `dplyr` package to answer the followi
 5. Which homeworld has the most individuals included in this data set?
 6. Which homeworld has the tallest individuals on average?
 7. What is the tallest individual for each eye color?
+
+## `iris` Excercises
+
+Please use the `iris` dataset from base R to answer the following questions:
+
+1. How many "virginica" have a petal width of 2.3 or greater in this dataset?
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+q1 <- filter(iris,Species=="virginica", Petal.Width >= 2.3)
+count(q1)
+```
+
+2. What is the average petal width for each species?
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+q2 <- iris %>% 
+  group_by(Species) %>% 
+  summarise(avg.petal.width = mean(Petal.Width))
+q2
+```
+
+3. How many observations of each species have a petal width of 2.3 or greater in this dataset?
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+iris %>% filter(Petal.Width >= 2.3) %>% group_by(Species) %>% tally()
+```
+
+
+4. How many observations of each species have a petal width of 0.5 or greater in this dataset?
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+iris %>% filter(Petal.Width >= 0.5) %>% group_by(Species) %>% tally()
+```
+
+
 
 # `dplyr` and `nycflights13`
 

@@ -152,9 +152,9 @@ starwars %>%
 #> 8 Zabrak       2  80
 ```
 
+# Practice
 
-
-# `starwars` Excercises
+## `starwars` Excercises
 
 Please use the `starwars` dataset from the `dplyr` package to answer the following questions:
 
@@ -171,6 +171,56 @@ Please use the `starwars` dataset from the `dplyr` package to answer the followi
 5. Which homeworld has the most individuals included in this data set?
 6. Which homeworld has the tallest individuals on average?
 7. What is the tallest individual for each eye color?
+
+## `iris` Excercises
+
+Please use the `iris` dataset from base R to answer the following questions:
+
+1. How many "virginica" have a petal width of 2.3 or greater in this dataset?
+
+
+```
+#>    n
+#> 1 14
+```
+
+2. What is the average petal width for each species?
+
+
+```
+#> # A tibble: 3 x 2
+#>   Species    avg.petal.width
+#>   <fct>                <dbl>
+#> 1 setosa               0.246
+#> 2 versicolor           1.33 
+#> 3 virginica            2.03
+```
+
+3. How many observations of each species have a petal width of 2.3 or greater in this dataset?
+
+
+```
+#> # A tibble: 1 x 2
+#>   Species       n
+#>   <fct>     <int>
+#> 1 virginica    14
+```
+
+
+4. How many observations of each species have a petal width of 0.5 or greater in this dataset?
+
+
+
+```
+#> # A tibble: 3 x 2
+#>   Species        n
+#>   <fct>      <int>
+#> 1 setosa         2
+#> 2 versicolor    50
+#> 3 virginica     50
+```
+
+
 
 # `dplyr` and `nycflights13`
 
@@ -399,16 +449,16 @@ flights %>% group_by(month, day) %>% sample_n(3)
 #> # Groups:   month, day [365]
 #>     year month   day dep_time sched_dep_time dep_delay
 #>    <int> <int> <int>    <int>          <int>     <dbl>
-#>  1  2013     1     1     2353           2359        -6
-#>  2  2013     1     1      659            700        -1
-#>  3  2013     1     1     2006           2000         6
-#>  4  2013     1     2     1530           1530         0
-#>  5  2013     1     2      701            705        -4
-#>  6  2013     1     2     1831           1829         2
-#>  7  2013     1     3     1855           1855         0
-#>  8  2013     1     3      901            905        -4
-#>  9  2013     1     3     1100           1100         0
-#> 10  2013     1     4      712            720        -8
+#>  1  2013     1     1     1915           1920        -5
+#>  2  2013     1     1     1604           1510        54
+#>  3  2013     1     1     1054           1059        -5
+#>  4  2013     1     2     1451           1440        11
+#>  5  2013     1     2     1001            944        17
+#>  6  2013     1     2      850            804        46
+#>  7  2013     1     3     1018            930        48
+#>  8  2013     1     3     1454           1455        -1
+#>  9  2013     1     3      900            857         3
+#> 10  2013     1     4      642            645        -3
 #> # ... with 1,085 more rows, and 13 more variables:
 #> #   arr_time <int>, sched_arr_time <int>, arr_delay <dbl>,
 #> #   carrier <chr>, flight <int>, tailnum <chr>,

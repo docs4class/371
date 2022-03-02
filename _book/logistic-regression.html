@@ -59,7 +59,7 @@
 <li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
 <li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">20</span> dplyr</a></li>
-<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="practice.html"><span class="header-section-number">21</span> Practice</a></li>
 <li><a class="" href="dplyr-and-nycflights13.html"><span class="header-section-number">22</span> dplyr and nycflights13</a></li>
 <li><a class="" href="joining-tables.html"><span class="header-section-number">23</span> Joining tables</a></li>
 <li><a class="" href="more-dplyr-excercies.html"><span class="header-section-number">24</span> More DPLYR Excercies</a></li>
@@ -101,7 +101,7 @@
 </h2>
 <p>Let’s use the Auto data set to create a basic logistic regression model. Warning, we are going to be calling on information from earlier in the class a lot during these sections, so if you see any code you are unfamiliar with, first look in earlier class materials as it will not be reexplained here.</p>
 <p>Let’s load in some data from the ISLR package and make some predictions using the “mpg” variable. We want to find the median of the variable, and then predict whether a vehicle will have an mpg above or below that middle point. To do this with logistic regression, we must create a factor object using mpg that our model will try to predict.</p>
-<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.statlearning.com">ISLR</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 
@@ -141,7 +141,7 @@
 
 <span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">Auto</span><span class="op">)</span></code></pre></div>
 <p>Now that we have a variable to predict, we can build the model.</p>
-<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">glm.auto</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">mpg01</span> <span class="op">~</span> <span class="va">weight</span> <span class="op">+</span> <span class="va">cylinders</span>, data <span class="op">=</span> <span class="va">Auto</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></code></pre></div>
 <p>As you can see, the structure is very similar to that of a linear regression model except for our specification of the data set we want it to use (this can be done in linear regression, but we did not earlier in the class) and the family argument which we have not seen before.</p>
 <p>In this course, we will only every specify family to be binomial, this tells R that the variable we are predicting only has two outcomes. The data argument is used to specify a training data set if we were using one, which we are not in this example.</p>
@@ -151,7 +151,7 @@
 <span class="header-section-number">26.4</span> Model Interpretation<a class="anchor" aria-label="anchor" href="#model-interpretation"><i class="fas fa-link"></i></a>
 </h2>
 <p>This is where things start to make a more complicated turn. We are going to look at how we evaluate the model’s performance. First, we must tell R to make the prediction and store the results in an object.</p>
-<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mpg01.probs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">glm.auto</span>, type <span class="op">=</span> <span class="st">'response'</span><span class="op">)</span>
 <span class="va">mpg01.probs</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span>
 <span class="co">#&gt;         1         2         3         4         5         6 </span>
@@ -159,11 +159,11 @@
 <span class="co">#&gt;         7         8         9        10 </span>
 <span class="co">#&gt; 0.9980630 0.9978088 0.9984275 0.9915263</span></code></pre></div>
 <p>If we were to look at the mpg01.probs object it would contain the probability of the desired response, which is the true/positive response by default. However, we want this to be more intuitive, so we will make everything in the data set say “Below” unless the percentage is above what we consider a fair odds. So, in our case we will say that anything over 50% has a fair chance of being above the median mpg.</p>
-<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mpg01.pred</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">'Below'</span>,<span class="fl">392</span><span class="op">)</span>
 <span class="va">mpg01.pred</span><span class="op">[</span><span class="va">mpg01.probs</span><span class="op">&gt;</span><span class="fl">.5</span><span class="op">]</span> <span class="op">=</span> <span class="st">'Above'</span></code></pre></div>
 <p>Finally, we can test our accuracy with a confusion matrix. The matrix will show our models predictions compared to the actual outcome. We can use this to test our accuracy and from there tweak different aspects of the model to help reduce variance.</p>
-<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">mpg01.pred</span>,<span class="va">mpg01</span><span class="op">)</span>
 <span class="co">#&gt;           mpg01</span>
 <span class="co">#&gt; mpg01.pred Above Below</span>
@@ -183,7 +183,7 @@
 <li><p>Segment the Auto data set into training and test sets.</p></li>
 <li><p>The following code shows a logistic regression model using test and training data. Recreate a similar model using the Auto data set and the mpg variable.</p></li>
 </ol>
-<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.statlearning.com">ISLR</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Smarket"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">Smarket</span><span class="op">)</span>
@@ -227,7 +227,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-03-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

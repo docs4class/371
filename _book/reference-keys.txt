@@ -90,7 +90,9 @@ single-table-verbs
 the-pipe
 loading-dplyr
 starwars-examples
+practice
 starwars-excercises
+iris-excercises
 dplyr-and-nycflights13
 choosing-columns-select-rename
 choosing-rows-filter-between-slice-sample_n-top_n-distinct
