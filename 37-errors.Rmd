@@ -1,6 +1,6 @@
 # Dealing with Errors
 
-## Introduction
+## Fun Introduction
 
 So, you spent the last 2 hours tirelessly writing code for a project that is due tomorrow. You finally get to the very end, 100+ lines of hard work. You click run and...you get an error. Fortunately for you, you are not alone in this struggle, everyone battles with errors because unlike R, we are not experts at code syntax and we make mistakes. This short chapter will walk you through some techniques to help solve errors on your own and also provide some resources that may help you. 
 

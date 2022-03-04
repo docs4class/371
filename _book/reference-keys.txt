@@ -105,10 +105,10 @@ joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_
 viewing-more-output-print-view
 more-dplyr-excercies
 dealing-with-errors
-introduction-4
+fun-introduction
 troubleshooting-typical-errors
 logistic-regression
-introduction-5
+introduction-4
 training-data-and-test-data
 model-structure
 model-interpretation
