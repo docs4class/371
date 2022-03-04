@@ -220,8 +220,6 @@ Please use the `iris` dataset from base R to answer the following questions:
 #> 3 virginica     50
 ```
 
-
-
 # `dplyr` and `nycflights13`
 
 
@@ -449,16 +447,16 @@ flights %>% group_by(month, day) %>% sample_n(3)
 #> # Groups:   month, day [365]
 #>     year month   day dep_time sched_dep_time dep_delay
 #>    <int> <int> <int>    <int>          <int>     <dbl>
-#>  1  2013     1     1     1915           1920        -5
-#>  2  2013     1     1     1604           1510        54
-#>  3  2013     1     1     1054           1059        -5
-#>  4  2013     1     2     1451           1440        11
-#>  5  2013     1     2     1001            944        17
-#>  6  2013     1     2      850            804        46
-#>  7  2013     1     3     1018            930        48
-#>  8  2013     1     3     1454           1455        -1
-#>  9  2013     1     3      900            857         3
-#> 10  2013     1     4      642            645        -3
+#>  1  2013     1     1     1038           1030         8
+#>  2  2013     1     1      759            800        -1
+#>  3  2013     1     1     1759           1759         0
+#>  4  2013     1     2     1305           1300         5
+#>  5  2013     1     2     2124           2110        14
+#>  6  2013     1     2     1301           1259         2
+#>  7  2013     1     3      740            745        -5
+#>  8  2013     1     3     1822           1829        -7
+#>  9  2013     1     3     1552           1600        -8
+#> 10  2013     1     4     1839           1805        34
 #> # ... with 1,085 more rows, and 13 more variables:
 #> #   arr_time <int>, sched_arr_time <int>, arr_delay <dbl>,
 #> #   carrier <chr>, flight <int>, tailnum <chr>,

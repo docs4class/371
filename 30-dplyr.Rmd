@@ -140,8 +140,6 @@ iris %>% filter(Petal.Width >= 2.3) %>% group_by(Species) %>% tally()
 iris %>% filter(Petal.Width >= 0.5) %>% group_by(Species) %>% tally()
 ```
 
-
-
 # `dplyr` and `nycflights13`
 
 ```{r}
